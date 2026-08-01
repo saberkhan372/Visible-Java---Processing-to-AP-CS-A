@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; connect-src 'none'; img-src 'self' data:; style-src 'self'; script-src 'self'">
+<title>Teacher response tool — AP Computer Science A</title>
+<meta name="description" content="Local-only AP CSA exit-slip response aggregator.">
+<link rel="stylesheet" href="assets/site.css?v=20260729c">
+</head>
+<body>
+<a class="skip-link" href="#main-content">Skip to content</a>
+<header class="masthead"><div class="wrap"><a class="logo" href="index.html">AP CS A <span class="arrow">&middot;</span> <span class="logo-sub">teacher response tool</span></a><nav aria-label="Primary navigation"><a href="path.html">Units</a><a href="calendar.html">Calendar</a></nav></div></header>
+<main id="main-content" tabindex="-1">
+  <section class="teacher-tool-hero"><div class="wrap stack"><span class="eyebrow">Teacher tool · local only</span><h1>Read the class picture without creating another database</h1><p class="lede">Paste student exit slips, group them by lesson, scan open checks and uncertainties, and copy a short teaching note.</p><div class="note cut"><p><strong>No pasted student response is stored or sent.</strong> Reloading or closing this page clears the working view. Only the session-scoped teacher-role flag is stored.</p></div></div></section>
+  <section><div class="wrap teacher-input-grid">
+    <div class="stack"><label class="workbook-field" for="teacher-slip-input">Student exit slips<textarea id="teacher-slip-input" rows="18" autocomplete="off" spellcheck="false" placeholder="Paste one or more === APCSA ... === blocks"></textarea></label></div>
+    <div class="stack"><label class="workbook-field" for="teacher-roster-input">Class roster <span>(one name per line; optional)</span><textarea id="teacher-roster-input" rows="10" autocomplete="off"></textarea></label><label class="workbook-field" for="teacher-summary-note">Teacher summary note <span>(written by you)</span><textarea id="teacher-summary-note" rows="4" autocomplete="off"></textarea></label></div>
+    <div class="teacher-tool-actions"><button id="analyze-slips" type="button">Analyze slips</button><button id="clear-teacher-tool" type="button" class="danger-button">Clear page</button></div>
+  </div></section>
+  <div id="teacher-results" class="wrap teacher-results" aria-live="polite"></div>
+</main>
+<footer><div class="wrap"><p>This tool parses text already copied from the LMS. It has no network connection, account, analytics, or response storage.</p></div></footer>
+<div id="workbook-live" class="sr-only" aria-live="polite"></div>
+<script src="assets/role.js?v=20260729c"></script>
+<script src="assets/unit1.js?v=20260730a"></script>
+<script src="assets/unit2.js?v=20260729c"></script>
+<script src="assets/unit3.js?v=20260729c"></script>
+<script src="assets/unit4.js?v=20260729c"></script>
+<script src="assets/teacher-tools.js?v=20260729c"></script>
+</body>
+</html>

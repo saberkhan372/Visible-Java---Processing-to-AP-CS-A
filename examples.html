@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Compare — AP Computer Science A</title>
+<meta name="description" content="The same program in Processing, in Java with the Processing library, and in exam-legal Java.">
+<link rel="stylesheet" href="assets/site.css">
+</head>
+<body>
+
+<a class="skip-link" href="#main-content">Skip to content</a>
+
+<header class="masthead">
+  <div class="wrap">
+    <a class="logo" href="index.html">AP CS A <span class="arrow">&middot;</span> <span class="logo-sub">built on your sketches</span></a>
+    <nav aria-label="Primary navigation">
+      <a href="index.html">Start</a>
+      <a href="calendar.html">Calendar</a>
+      <a href="path.html">Units</a>
+      <a href="examples.html" aria-current="page">Compare</a>
+      <a href="translate.html">Translate</a>
+      <a href="port.html">Port</a>
+      <a href="traps.html">Traps</a>
+      <a href="frq.html">FRQ</a>
+      <a href="setup.html">Setup</a>
+      <a href="camp.html">Camp</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main-content" tabindex="-1">
+
+<section>
+  <div class="wrap stack">
+    <span class="eyebrow">Reference library</span>
+    <h1>Watch it, then read it</h1>
+    <p class="lede">
+      Ten ideas, each shown twice: running on the left, written the way the exam expects on
+      the right. Same program, same arithmetic &mdash; the ball really is moving because
+      <code>y = y + 2</code>. If you want the Processing source you already know, it is
+      folded underneath each one.
+    </p>
+
+    <div class="ladder" style="margin-top:0.5rem">
+      <div class="rung">
+        <h2>1 &middot; Watch</h2>
+        <p>A live canvas, the way it looked in Processing. Pause it whenever the numbers are moving too fast to read.</p>
+      </div>
+      <div class="rung">
+        <h2>2 &middot; Read</h2>
+        <p>The same logic in exam-legal Java. No canvas, no library &mdash; this is the version you will be asked to trace in May.</p>
+      </div>
+      <div class="rung">
+        <h2>3 &middot; Check the source</h2>
+        <p>Open <em>How you wrote this in Processing</em> for the sketch, and for the same sketch as real Java with the Processing library still attached.</p>
+      </div>
+    </div>
+
+    <div class="note">
+      <p>
+        <strong>The folded pane is worth opening once per example.</strong> The
+        <em>Java + Processing</em> version is the whole course on one screen: your sketch was
+        always a class, your variables were always fields, your functions were always
+        methods, and something was always calling <code>main</code>. Processing just never
+        showed you the wrapper.
+      </p>
+      <p>
+        Want to actually run Java rather than read it? Copy a complete pane into the
+        <a href="setup.html">Java environment chosen for this course</a>. Every plain-Java
+        pane is designed to compile on its own; the Processing panes need the Processing
+        library described on the Setup page.
+      </p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div id="library"></div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap stack">
+    <h2>Using these well</h2>
+    <ul class="plain">
+      <li><strong>Predict before you run.</strong> Read the AP Java pane and write down what you think it prints. Then run it. Then explain any difference. That loop is the single most valuable study habit in this course &mdash; over a third of the multiple choice is code analysis.</li>
+      <li><strong>Type the middle pane by hand once.</strong> Copying teaches you nothing about where semicolons and braces go. You will hit the file-name rule and the <code>static</code> rule on your own, which is how they stick.</li>
+      <li><strong>Change one thing.</strong> Take the AP pane, change a bound or a starting value, predict the new output, run it. Small deliberate edits beat re-reading.</li>
+      <li><strong>Then go to <a href="port.html">Port</a></strong> and do the same thing to a sketch you wrote yourself.</li>
+    </ul>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <p>
+      Add examples by appending to the <code>SNIPPETS</code> array in
+      <code>assets/snippets.js</code>. Every entry needs all three versions, each a complete
+      runnable program.
+    </p>
+  </div>
+</footer>
+
+<script src="assets/content.js"></script>
+<script src="assets/snippets.js"></script>
+<script>renderSnippets("library");</script>
+<script src="assets/role.js?v=20260729c"></script>
+</body>
+</html>

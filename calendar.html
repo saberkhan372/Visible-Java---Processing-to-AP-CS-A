@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Calendar — AP Computer Science A</title>
+<meta name="description" content="Every AP CS A class meeting for 2026–27, with topic, activity and assessment.">
+<link rel="stylesheet" href="assets/site.css">
+</head>
+<body>
+
+<a class="skip-link" href="#main-content">Skip to content</a>
+
+<header class="masthead">
+  <div class="wrap">
+    <a class="logo" href="index.html">AP CS A <span class="arrow">&middot;</span> <span class="logo-sub">built on your sketches</span></a>
+    <nav aria-label="Primary navigation">
+      <a href="index.html">Start</a>
+      <a href="calendar.html" aria-current="page">Calendar</a>
+      <a href="path.html">Units</a>
+      <a href="examples.html">Compare</a>
+      <a href="translate.html">Translate</a>
+      <a href="port.html">Port</a>
+      <a href="traps.html">Traps</a>
+      <a href="frq.html">FRQ</a>
+      <a href="setup.html">Setup</a>
+      <a href="camp.html">Camp</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main-content" tabindex="-1">
+
+<section>
+  <div class="wrap stack">
+    <span class="eyebrow">2026&ndash;27 &middot; E block, Gold days</span>
+    <h1>Every meeting, in order</h1>
+    <p class="lede">
+      All 71 class meetings between Friday 4 September and the exam on Wednesday 12 May,
+      with the topic and the work for each one. Times move because E block rotates through
+      four periods &mdash; check the time, not just the date.
+    </p>
+    <div class="tags" style="gap:0.5rem">
+      <span class="tag"><span class="chip chip-test" style="margin:0">test</span></span>
+      <span class="tag"><span class="chip chip-quiz" style="margin:0">quiz</span></span>
+      <span class="tag"><span class="chip chip-lab" style="margin:0">lab</span></span>
+      <span class="tag"><span class="chip chip-frq" style="margin:0">frq</span></span>
+      <span class="tag"><span class="chip chip-due" style="margin:0">due</span></span>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div id="calendar"></div>
+
+    <div class="cal-exam">
+      <h3>AP Computer Science A Exam</h3>
+      <p style="font-family:var(--mono);font-size:0.8rem;color:var(--warn)">Wednesday 12 May 2027 &middot; 12:00 PM</p>
+      <p>
+        Three hours. 42 multiple-choice in 90 minutes (55%), then four free-response in 90
+        minutes (45%). Digital, in Bluebook, with the Java Quick Reference on screen and no
+        Run button.
+      </p>
+      <p>
+        <strong>Note:</strong> 12 May is a Gold 4 day, so E block is technically scheduled
+        10:15&ndash;11:30 that morning &mdash; expect to be released for exam check-in
+        instead.
+      </p>
+    </div>
+
+    <div class="stack" style="margin-top:2rem">
+      <h3>After the exam</h3>
+      <p style="font-size:0.9rem;color:var(--ink-2)">
+        Seven more meetings, 14 May to 2 June: a Unit 4 lab-choice project or a free build.
+      </p>
+      <div id="postexam" class="tags"></div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap stack-sm">
+    <p>
+      Dates generated from the 2026&ndash;27 Secondary Planner. Topics follow the AP Computer
+      Science A Course and Exam Description effective Fall 2025. Sequence and pacing
+      rationale: <code>SCOPE-AND-SEQUENCE.md</code>.
+    </p>
+    <p>
+      This is the plan, not a promise &mdash; snow days, assemblies and the pace of the room
+      all move things. Check with your teacher before relying on a date.
+    </p>
+  </div>
+</footer>
+
+<script src="assets/calendar.js"></script>
+<script>
+(function () {
+  const mount = document.getElementById("calendar");
+  const CHIP = { test: "test", quiz: "quiz", lab: "lab", frq: "frq", due: "due" };
+  let html = "";
+  let unit = null;
+
+  MEETINGS.forEach((m, i) => {
+    if (m.unit !== unit) {
+      unit = m.unit;
+      const last = MEETINGS.filter(x => x.unit === unit).slice(-1)[0];
+      const span = m.date.slice(4, 10) + " – " + last.date.slice(4, 10);
+      const count = MEETINGS.filter(x => x.unit === unit).length;
+      html += `<div class="cal-unit"><h3>${unit}</h3>
+        <span class="cal-span">${span} &middot; ${count} meeting${count > 1 ? "s" : ""}</span></div>`;
+    }
+    if (m.gap) {
+      html += `<div class="cal-break">${m.gap} days off</div>`;
+    }
+    const chip = m.kind ? `<span class="chip chip-${m.kind}">${CHIP[m.kind]}</span>` : "";
+    const unitNumber = /^Unit ([1-4])/.exec(m.unit);
+    const lessonHref = unitNumber
+      ? `unit${unitNumber[1]}/lesson-${String(m.n).padStart(2, "0")}.html`
+      : "";
+    const topic = lessonHref ? `<a class="cal-topic-link" href="${lessonHref}">${m.topic}</a>` : m.topic;
+    html += `<div class="cal-row${m.kind === "test" ? " k-test" : ""}">
+      <div class="cal-n">${m.n}</div>
+      <div class="cal-date">${m.date}<span class="cal-rot">${m.rot}</span></div>
+      <div class="cal-time">${m.time}</div>
+      <div class="cal-main">
+        <span class="cal-topic">${topic}${chip}</span>
+        <span class="cal-act">${m.act}</span>
+      </div>
+    </div>`;
+  });
+  mount.innerHTML = html;
+
+  document.getElementById("postexam").innerHTML =
+    POSTEXAM.map(p => `<span class="tag">${p.date.slice(4)} &middot; ${p.time}</span>`).join("");
+})();
+</script>
+<script src="assets/role.js?v=20260729c"></script>
+</body>
+</html>

@@ -1,0 +1,174 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Translate — AP Computer Science A</title>
+<meta name="description" content="Every Processing habit and its AP CS A replacement.">
+<link rel="stylesheet" href="assets/site.css">
+</head>
+<body>
+
+<a class="skip-link" href="#main-content">Skip to content</a>
+
+<header class="masthead">
+  <div class="wrap">
+    <a class="logo" href="index.html">AP CS A <span class="arrow">&middot;</span> <span class="logo-sub">built on your sketches</span></a>
+    <nav aria-label="Primary navigation">
+      <a href="index.html">Start</a>
+      <a href="calendar.html">Calendar</a>
+      <a href="path.html">Units</a>
+      <a href="examples.html">Compare</a>
+      <a href="translate.html" aria-current="page">Translate</a>
+      <a href="port.html">Port</a>
+      <a href="traps.html">Traps</a>
+      <a href="frq.html">FRQ</a>
+      <a href="setup.html">Setup</a>
+      <a href="camp.html">Camp</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main-content" tabindex="-1">
+
+<section>
+  <div class="wrap stack">
+    <span class="eyebrow">Reference</span>
+    <h1>The translation layer</h1>
+    <p class="lede">
+      This page never explains a concept from scratch. It only tells you what changed.
+      Left column is something you already know how to do; right column is how it is done
+      in the Java the exam expects.
+    </p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap stack">
+    <div class="tbl-scroll">
+      <table>
+        <thead>
+          <tr>
+            <th style="width:24%">Your Processing habit</th>
+            <th style="width:28%">AP CS A version</th>
+            <th>What bites you</th>
+          </tr>
+        </thead>
+        <tbody id="translations"></tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap stack-lg">
+    <div class="stack">
+      <span class="eyebrow">The one that reframes everything</span>
+      <h2>The PDE was hiding a class from you</h2>
+      <p>
+        When you pressed Run in Processing, the editor quietly wrapped your sketch in a
+        Java class, turned your global variables into instance variables, turned your
+        functions into methods, and wrote a <code>main</code> for you. You have been
+        writing classes all along without seeing the outside of one.
+      </p>
+      <p>
+        You can see this for yourself. A Processing sketch, written out as ordinary Java
+        with nothing hidden, looks like this:
+      </p>
+    </div>
+
+    <div class="seam">
+      <div class="side side-a">
+        <div class="side-head"><span class="dot"></span>The sketch</div>
+<pre><span class="k">float</span> y = <span class="n">0</span>;
+
+<span class="k">void</span> <span class="t">setup</span>() {
+  <span class="t">size</span>(<span class="n">400</span>, <span class="n">400</span>);
+}
+
+<span class="k">void</span> <span class="t">draw</span>() {
+  <span class="t">ellipse</span>(<span class="n">200</span>, y, <span class="n">40</span>, <span class="n">40</span>);
+  y = y + <span class="n">2</span>;
+}</pre>
+      </div>
+      <div class="side side-b">
+        <div class="side-head"><span class="dot"></span>What Processing built for you</div>
+<pre><span class="k">import</span> processing.core.<span class="t">PApplet</span>;
+
+<span class="k">public class</span> <span class="t">Sketch</span> <span class="k">extends</span> <span class="t">PApplet</span> {
+
+  <span class="k">float</span> y = <span class="n">0</span>;
+
+  <span class="k">public void</span> <span class="t">settings</span>() {
+    <span class="t">size</span>(<span class="n">400</span>, <span class="n">400</span>);
+  }
+
+  <span class="k">public void</span> <span class="t">draw</span>() {
+    <span class="t">ellipse</span>(<span class="n">200</span>, y, <span class="n">40</span>, <span class="n">40</span>);
+    y = y + <span class="n">2</span>;
+  }
+
+  <span class="k">public static void</span> <span class="t">main</span>(<span class="t">String</span>[] args) {
+    <span class="t">PApplet</span>.<span class="t">runSketch</span>(
+      <span class="k">new</span> <span class="t">String</span>[]{<span class="s">"Sketch"</span>},
+      <span class="k">new</span> <span class="t">Sketch</span>());
+  }
+}</pre>
+      </div>
+    </div>
+
+    <div class="note">
+      <p>
+        <strong>Worth doing once.</strong> Set this up for real and run it &mdash;
+        <a href="https://happycoding.io/tutorials/java/processing-in-java">Happy Coding's
+        <em>Processing in Java</em></a> walks through it step by step. Seeing your own
+        sketch as a class, with <code>main</code> at the bottom, does more to explain the
+        first month of AP CS A than any lecture will.
+      </p>
+      <p>
+        Note the pieces you already recognise: <code>public class</code>, a field, methods,
+        and a <code>main</code> that creates an object. That is Unit 3 of the course, and
+        you have been living inside it for a year.
+      </p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap stack-lg">
+    <div class="stack">
+      <span class="eyebrow">Do not skip this</span>
+      <h2>Watch the arrows move</h2>
+      <p>
+        Aliasing is the one topic where reading an explanation genuinely does not work.
+        You need to see the boxes and arrows change as each line runs.
+      </p>
+    </div>
+    <div class="note">
+      <p>
+        <strong><a href="https://pythontutor.com/java.html">Java Tutor</a></strong> steps
+        through Java line by line &mdash; forwards <em>and backwards</em> &mdash; drawing
+        every variable, every object, and every reference between them. Paste in
+        <a href="traps.html">Trap 12</a>, press forward four times, and watch what happens
+        to the first object when both variables end up pointing at the second.
+      </p>
+      <p>
+        Do this the first week. It will save you a letter grade.
+      </p>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <p>Add rows to this table by editing <code>assets/content.js</code>.</p>
+  </div>
+</footer>
+
+<script src="assets/content.js"></script>
+<script>renderTranslations("translations");</script>
+<script src="assets/role.js?v=20260729c"></script>
+</body>
+</html>

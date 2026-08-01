@@ -1,0 +1,214 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Free response — AP Computer Science A</title>
+<meta name="description" content="The four free-response questions, how to read them, and which old ones are still worth practising.">
+<link rel="stylesheet" href="assets/site.css">
+</head>
+<body>
+
+<a class="skip-link" href="#main-content">Skip to content</a>
+
+<header class="masthead">
+  <div class="wrap">
+    <a class="logo" href="index.html">AP CS A <span class="arrow">&middot;</span> <span class="logo-sub">built on your sketches</span></a>
+    <nav aria-label="Primary navigation">
+      <a href="index.html">Start</a>
+      <a href="calendar.html">Calendar</a>
+      <a href="path.html">Units</a>
+      <a href="examples.html">Compare</a>
+      <a href="translate.html">Translate</a>
+      <a href="port.html">Port</a>
+      <a href="traps.html">Traps</a>
+      <a href="frq.html" aria-current="page">FRQ</a>
+      <a href="setup.html">Setup</a>
+      <a href="camp.html">Camp</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main-content" tabindex="-1">
+
+<section>
+  <div class="wrap stack">
+    <span class="eyebrow">Section II</span>
+    <h1>Four questions, ninety minutes</h1>
+    <p class="lede">
+      Free response is 45% of your score and it is the half you can prepare for most
+      directly, because the four questions have been remarkably consistent in shape for
+      years. You are not being asked to invent anything. You are being asked to write
+      ordinary code that does exactly what the prompt says.
+    </p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap stack">
+    <h2>What the four questions are</h2>
+    <div class="tbl-scroll">
+      <table>
+        <thead>
+          <tr><th style="width:7%">#</th><th style="width:8%">Points</th><th style="width:26%">Shape</th><th>What you actually do</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>Q1</code></td>
+            <td class="now"><code>7</code></td>
+            <td class="now"><code>Methods and Control Structures</code></td>
+            <td class="why">Two methods, or a constructor and a method. <strong>Part A (4 pts)</strong> wants loops and conditionals plus calls to other methods in the class. <strong>Part B (3 pts)</strong> <em>always</em> requires calling <code>String</code> methods &mdash; so know all six on the reference sheet.</td>
+          </tr>
+          <tr>
+            <td><code>Q2</code></td>
+            <td class="now"><code>7</code></td>
+            <td class="now"><code>Class Design</code></td>
+            <td class="why">Design and implement a whole class from a table of example interactions. It must contain a class header, instance variables, a constructor, and a method &mdash; that is the literal checklist. Practise until the skeleton is muscle memory.</td>
+          </tr>
+          <tr>
+            <td><code>Q3</code></td>
+            <td class="now"><code>5</code></td>
+            <td class="now"><code>Data Analysis with ArrayList</code></td>
+            <td class="why">One method that uses, analyses and manipulates data in an <code>ArrayList</code> &mdash; often two lists of objects compared against each other. Note it is specifically <code>ArrayList</code>, not plain arrays.</td>
+          </tr>
+          <tr>
+            <td><code>Q4</code></td>
+            <td class="now"><code>6</code></td>
+            <td class="now"><code>2D Array</code></td>
+            <td class="why">One method over a grid. Nested loops, almost always row-major. The hard part is usually keeping your indices straight, not the algorithm.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p style="font-size:0.88rem;color:var(--ink-3)">
+      25 points across 90 minutes. Question 1 and Question 2 are worth more than
+      Question 3 &mdash; if you are running short, that is where to spend the time.
+      Structure and point values are from the Course and Exam Description effective
+      Fall 2025.
+    </p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap stack-lg">
+    <div class="stack">
+      <span class="eyebrow">Before you practise</span>
+      <h2>Not every old question still counts</h2>
+      <p>
+        Released free-response questions go back to 2004 and they are all still online.
+        Many of them test things that were removed from the course in 2025. College Board
+        says so themselves: the archived questions "do not completely align" with the
+        current exam.
+      </p>
+    </div>
+
+    <div class="grid">
+      <div class="note cut">
+        <h3>Skip a question if it asks you to&hellip;</h3>
+        <ul class="plain" style="padding-left:1rem">
+          <li>write a subclass, or use <code>extends</code> or <code>super</code></li>
+          <li>implement an interface</li>
+          <li>write a recursive method</li>
+        </ul>
+        <p>All three were cut. A question built around any of them cannot appear now.</p>
+      </div>
+      <div class="note">
+        <h3>Prioritise</h3>
+        <ul class="plain" style="padding-left:1rem">
+          <li><strong>2020 and later</strong> &mdash; closest to the current course</li>
+          <li>anything on 2D arrays, <code>ArrayList</code>, or writing a standalone class</li>
+          <li>the 2025 paper, first &mdash; it is the most recent signal you have</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="note">
+      <p>
+        <strong>Everything is free, from the source:</strong>
+        <a href="https://apcentral.collegeboard.org/courses/ap-computer-science-a/exam/past-exam-questions">AP Central past exam questions</a>.
+        Download the <em>Free-Response Questions</em> PDF for the prompt and the
+        <em>Scoring Guidelines</em> for the official answer. Do not trust a solution you
+        found anywhere else until you have checked it against the guidelines.
+      </p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap stack-lg">
+    <div class="stack">
+      <span class="eyebrow">Method</span>
+      <h2>How to read one</h2>
+    </div>
+
+    <div class="stack" style="gap:0">
+      <div class="step">
+        <div class="step-label">First</div>
+        <div class="step-body">
+          <p><strong>Read the given code, not the story.</strong> Every question opens with a class you are handed. The methods in it are there because you are expected to call them. If the prompt gives you a <code>getPrice()</code>, use it &mdash; do not reach into the field directly and do not rewrite it.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-label">Then</div>
+        <div class="step-body">
+          <p><strong>Copy the method header exactly.</strong> Return type, name, parameter types, parameter order. It is printed in the prompt. Retyping it wrong is the cheapest possible way to lose points, and it happens constantly.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-label">Then</div>
+        <div class="step-body">
+          <p><strong>Find the boundary case before you write the loop.</strong> Empty list, one element, nothing matches, everything matches. Most rubrics have a point sitting on one of these.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-label">Always</div>
+        <div class="step-body">
+          <p><strong>Write something.</strong> Partial credit is real and it is generous. A loop that traverses the right structure earns points even if the body is wrong. A blank answer earns nothing. Never leave a part empty because you could not finish part (a) &mdash; parts are scored independently, and you may call a method from part (a) in part (b) even if you never wrote it.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-label">Never</div>
+        <div class="step-body">
+          <p><strong>Don't write a <code>main</code> unless asked.</strong> Don't add <code>import</code> statements. Don't print anything unless the question says to print &mdash; if it says <em>return</em>, return.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap stack">
+    <h2>Worked practice</h2>
+    <ul class="plain">
+      <li><strong>CupcakeMachine, StepTracker, and Time</strong> from the remixed class-creation set &mdash; work them one rubric point at a time before attempting a blank page.</li>
+      <li><strong>The array, <code>ArrayList</code>, and 2D-array FRQ sets</strong> in the course folder &mdash; begin with the scaffolded copies, then repeat without the scaffolds.</li>
+      <li><strong>Mixed-up code FRQ practice</strong> from the imported packets &mdash; put the provided lines in order as a bridge to writing from blank.</li>
+      <li><strong><a href="https://www.skylit.com/beprepared/fr.html">Annotated FRQ solutions</a></strong> &mdash; free, and explains <em>why</em> a rubric point exists.</li>
+      <li><strong>Timed course practice</strong> &mdash; once you are close, sit at least one full 90-minute section before May.</li>
+    </ul>
+    <div class="note">
+      <p>
+        <strong>Practise by hand at least twice.</strong> The exam is on a computer, but
+        Bluebook will not compile your code, autocomplete a method name, or tell you that
+        you forgot a semicolon. Writing two full questions on paper is the fastest way to
+        find out which parts of the syntax you actually know.
+      </p>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <p>
+      Exam weights and question structure follow the Course and Exam Description effective
+      Fall 2025. Confirm against
+      <a href="https://apcentral.collegeboard.org/courses/ap-computer-science-a/exam">AP Central</a>
+      before the exam.
+    </p>
+  </div>
+</footer>
+<script src="assets/role.js?v=20260729c"></script>
+</body>
+</html>

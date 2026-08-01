@@ -1,0 +1,235 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Setup — AP Computer Science A</title>
+<meta name="description" content="Getting off the Processing editor: choosing a Java environment, reading errors, and keeping graphics if you want them.">
+<link rel="stylesheet" href="assets/site.css">
+</head>
+<body>
+
+<a class="skip-link" href="#main-content">Skip to content</a>
+
+<header class="masthead">
+  <div class="wrap">
+    <a class="logo" href="index.html">AP CS A <span class="arrow">&middot;</span> <span class="logo-sub">built on your sketches</span></a>
+    <nav aria-label="Primary navigation">
+      <a href="index.html">Start</a>
+      <a href="calendar.html">Calendar</a>
+      <a href="path.html">Units</a>
+      <a href="examples.html">Compare</a>
+      <a href="translate.html">Translate</a>
+      <a href="port.html">Port</a>
+      <a href="traps.html">Traps</a>
+      <a href="frq.html">FRQ</a>
+      <a href="setup.html" aria-current="page">Setup</a>
+      <a href="camp.html">Camp</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main-content" tabindex="-1">
+
+<section>
+  <div class="wrap stack">
+    <span class="eyebrow">Tools</span>
+    <h1>Leaving the PDE</h1>
+    <p class="lede">
+      The Processing editor did four things for you invisibly: it hid <code>main</code>,
+      it gave you one file for everything, it drew to a window automatically, and it made
+      Run a single keystroke. You are about to lose all four. Here is what to use instead.
+    </p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap stack-lg">
+    <div class="stack">
+      <h2>Pick an environment</h2>
+      <p>Use whatever your teacher uses. If the choice is yours, these are the sensible options:</p>
+    </div>
+
+    <div class="grid">
+      <div class="card">
+        <h3><a href="unit1.html">Course lesson pages</a></h3>
+        <p><strong>Nothing to install for reading and tracing.</strong> Copy a lesson starter into the school&rsquo;s Java environment when it is time to compile, test, and save the program.</p>
+      </div>
+      <div class="card">
+        <h3><a href="https://www.jgrasp.org/">jGRASP</a></h3>
+        <p><strong>Free, light, made for learning.</strong> Its object viewer draws your variables and objects while the program is paused &mdash; the single most useful feature for understanding references.</p>
+      </div>
+      <div class="card">
+        <h3><a href="https://www.bluej.org/">BlueJ</a></h3>
+        <p><strong>Objects made visible.</strong> Shows classes as boxes and lets you create an object and call its methods by clicking. A gentle first step off the PDE.</p>
+      </div>
+      <div class="card">
+        <h3><a href="https://www.jetbrains.com/idea/">IntelliJ IDEA</a></h3>
+        <p><strong>What professionals use.</strong> Free Community edition. More setup and more to ignore, but if you plan to keep programming after this course, learning it now is not wasted.</p>
+      </div>
+    </div>
+
+    <div class="note">
+      <p>
+        <strong>One rule whatever you pick:</strong> the file name must match the public
+        class name exactly. <code>public class Ball</code> lives in <code>Ball.java</code>,
+        capital B and all. In Processing you never had to think about this. Now it is the
+        difference between compiling and not.
+      </p>
+    </div>
+
+    <div class="note">
+      <p>
+        <strong>Course verification baseline: Java 17.</strong> The downloadable workbook
+        projects are compiled and checked with OpenJDK 17 before publication. Use the Java 17
+        distribution configured by your school; the current authoring verification version is
+        17.0.20. Processing extensions use a separate optional dependency and never block the
+        standard-Java projects.
+      </p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap stack-lg">
+    <div class="stack">
+      <span class="eyebrow">Optional, but worth it</span>
+      <h2>If you want to keep the pixels</h2>
+      <p>
+        Nothing about AP CS A requires you to give up graphics. Two ways to keep making
+        things move while writing exam-legal Java:
+      </p>
+    </div>
+
+    <div class="grid">
+      <div class="card">
+        <h3><a href="https://happycoding.io/tutorials/java/processing-in-java">Processing as a library</a></h3>
+        <p>
+          Use Processing's <code>core.jar</code> from a normal Java project: write a class
+          that extends <code>PApplet</code>, override <code>draw()</code>, and launch it
+          from <code>main</code>. Everything you already know still works &mdash; you just
+          see the class around it now. Doing this once explains the whole first month of
+          the course.
+        </p>
+      </div>
+      <div class="card">
+        <h3><a href="https://code.org/en-US/curriculum/computer-science-a">Code.org Java Lab</a></h3>
+        <p>
+          Free, in the browser, nothing to install. Its <em>Neighborhood</em> and
+          <em>Theater</em> environments let you write real classes with a real
+          <code>main</code> and still get animation, images and sound on screen. The
+          closest thing to the Processing feedback loop that stays inside AP Java.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap stack-lg">
+    <div class="stack">
+      <span class="eyebrow">Week one</span>
+      <h2>The errors you are about to meet</h2>
+      <p>
+        Compiler errors look hostile and are mostly not. Each of these has one usual cause.
+      </p>
+    </div>
+
+    <dl class="errs">
+      <dt>non-static method move() cannot be referenced from a static context</dt>
+      <dd>
+        <strong>The one you'll see most.</strong> You are inside <code>main</code>, which is
+        <code>static</code>, and you tried to call a method that belongs to an object. Make
+        an object first: <code>Ball b = new Ball(); b.move();</code>
+      </dd>
+
+      <dt>incompatible types: possible lossy conversion from double to float</dt>
+      <dd>
+        You wrote <code>float x = 3.5;</code>. Use <code>double</code>. Java will not
+        silently shrink a number for you the way Processing did.
+      </dd>
+
+      <dt>incompatible types: possible lossy conversion from double to int</dt>
+      <dd>
+        Same idea one type down &mdash; usually assigning the result of division or
+        <code>Math.random()</code> to an <code>int</code>. Cast it: <code>(int)(...)</code>.
+      </dd>
+
+      <dt>cannot find symbol</dt>
+      <dd>
+        Java does not know that name. A typo, wrong capitalisation, a variable declared
+        inside a block you have now left, or a Processing function that does not exist
+        here (<code>ellipse</code>, <code>random</code>, <code>map</code>).
+      </dd>
+
+      <dt>class Ball is public, should be declared in a file named Ball.java</dt>
+      <dd>Rename the file, or rename the class. They must match exactly.</dd>
+
+      <dt>missing return statement</dt>
+      <dd>
+        A method that promises a return type has a path through it that returns nothing
+        &mdash; usually an <code>if</code> with no <code>else</code>.
+      </dd>
+
+      <dt>variable count might not have been initialized</dt>
+      <dd>
+        You declared it but never gave it a value before reading it. Local variables do not
+        default to zero; only instance variables do.
+      </dd>
+
+      <dt>constructor Ball in class Ball cannot be applied to given types</dt>
+      <dd>
+        You called <code>new Ball(...)</code> with the wrong number or type of arguments.
+        Check the constructor's parameter list.
+      </dd>
+    </dl>
+
+    <div class="stack">
+      <h3 style="margin-top:1rem">And at runtime</h3>
+      <ul class="plain">
+        <li><strong>NullPointerException</strong> &mdash; you called a method on something that is <code>null</code>. Very often an array of objects you created but never filled. See trap 15.</li>
+        <li><strong>ArrayIndexOutOfBoundsException</strong> &mdash; an index below 0 or at least <code>length</code>. Almost always <code>&lt;=</code> where you wanted <code>&lt;</code>. See trap 14.</li>
+        <li><strong>StringIndexOutOfBoundsException</strong> &mdash; same thing on a string, usually from <code>substring</code> with an end index past the last character.</li>
+        <li><strong>ArithmeticException: / by zero</strong> &mdash; integer division by zero. Note that <code>double</code> division by zero does <em>not</em> throw; it gives <code>Infinity</code>.</li>
+      </ul>
+    </div>
+
+    <div class="note">
+      <p>
+        <strong>Read stack traces from the top.</strong> The first line names the exception
+        and the message; the next line with <em>your</em> file name in it is where to look.
+        Everything below that is Java's own machinery and you can ignore it.
+      </p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap stack">
+    <h2>Two things to bookmark now</h2>
+    <ul class="plain">
+      <li>
+        <strong><a href="https://apcentral.collegeboard.org/media/pdf/ap-computer-science-a-java-quick-reference.pdf">The Java Quick Reference</a></strong>
+        &mdash; the exact list of library methods you are allowed to use, and the exact list
+        you will have in front of you on exam day. It is two pages. Read it now so nothing
+        on it is a surprise in May, and so you stop reaching for methods that are not on it.
+      </li>
+      <li>
+        <strong><a href="https://pythontutor.com/java.html">Java Tutor</a></strong>
+        &mdash; paste code in, step forwards and backwards, watch the objects and arrows.
+        Use it every single time you are confused about what a reference is pointing at.
+      </li>
+    </ul>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <p>Tool links checked July 2026.</p>
+  </div>
+</footer>
+<script src="assets/role.js?v=20260729c"></script>
+</body>
+</html>

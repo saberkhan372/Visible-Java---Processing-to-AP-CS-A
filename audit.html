@@ -1,0 +1,227 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Content coverage audit — AP Computer Science A</title>
+<meta name="robots" content="noindex">
+<link rel="stylesheet" href="assets/site.css?v=20260729c">
+<style>
+  .audit-table { font-size: 0.82rem; }
+  .audit-table td, .audit-table th { padding: 0.35rem 0.5rem; white-space: nowrap; }
+  .yes { color: var(--sketch); font-weight: 600; }
+  .no  { color: var(--warn); font-weight: 600; }
+  .na  { color: var(--ink-3); }
+  .rollup { display: grid; grid-template-columns: repeat(auto-fit, minmax(190px,1fr)); gap: 0.8rem; }
+  .rollup div { border: 1px solid var(--rule); border-radius: 3px; padding: 0.8rem 0.9rem; background: var(--panel); }
+  .rollup strong { display: block; font-family: var(--mono); font-size: 1.5rem; }
+  .rollup span { font-size: 0.82rem; color: var(--ink-2); }
+  .rollup .bad strong, .bad strong { color: var(--warn); }
+  .rollup .warn strong { color: #8a5a00; }
+  .audit-config { border-left: 4px solid var(--warn); padding: 0.9rem 1rem; background: var(--warn-soft); }
+  .audit-config summary { cursor: pointer; font-family: var(--mono); }
+  .audit-legend { display: flex; flex-wrap: wrap; gap: 0.6rem 1rem; font-size: 0.78rem; color: var(--ink-2); }
+</style>
+</head>
+<body>
+
+<a class="skip-link" href="#main-content">Skip to content</a>
+
+<header class="masthead">
+  <div class="wrap">
+    <a class="logo" href="index.html">AP CS A <span class="arrow">&middot;</span> <span class="logo-sub">content audit</span></a>
+    <nav aria-label="Primary navigation"><a href="index.html">Back to site</a></nav>
+  </div>
+</header>
+
+<main id="main-content" tabindex="-1">
+<section>
+  <div class="wrap stack">
+    <span class="eyebrow">Not for students &middot; not linked from navigation</span>
+    <h1>Content coverage audit</h1>
+    <p class="lede">
+      Every lesson in Units 1&ndash;4 against every capability the workbook can carry. This exists
+      because spot-checking a few lessons hides the case where a feature is wired but the
+      content behind it was never authored.
+    </p>
+    <div class="note">
+      <p>
+        <strong>Required &ne; optional &ne; configured.</strong> This page checks the authored
+        contract for each lesson type, reports optional Processing separately, and keeps annual
+        Classroom URLs in a deployment section. Run <code>tools/release.sh</code> for structural,
+        bundle, and Java checks.
+      </p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap stack">
+    <h2>Roll-up</h2>
+    <div id="rollup" class="rollup"></div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap stack">
+    <h2>Required content gaps</h2>
+    <p>Only lessons missing something required by their type. Optional extensions and deployment configuration do not create false failures here.</p>
+    <div id="gaps" class="stack-sm"></div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap stack">
+    <h2>Deployment configuration</h2>
+    <div id="configuration" class="audit-config stack-sm"></div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap stack">
+    <h2>Full matrix</h2>
+    <div class="tbl-scroll">
+      <table class="audit-table"><thead><tr>
+        <th>Lesson</th><th>Type</th><th>Project</th><th>Missions</th><th>Checks</th>
+        <th>Predict</th><th>Model</th><th>AP</th><th>Reflect</th>
+        <th>Presenter</th><th>Processing <span class="na">(opt.)</span></th><th>Classroom <span class="na">(config.)</span></th>
+      </tr></thead><tbody id="matrix"></tbody></table>
+    </div>
+    <p class="audit-legend"><span class="yes">yes / shared / custom</span><span>required or available</span><span class="na">— / optional / classroom</span><span>not required or supplied elsewhere</span><span class="no">not set</span><span>deployment work remains</span></p>
+  </div>
+</section>
+</main>
+
+<footer><div class="wrap"><p>Generated in the browser from unit data, shared presenter guidance, and local deployment configuration. Nothing is stored or sent.</p></div></footer>
+
+<script src="assets/role.js?v=20260729c"></script>
+<script src="assets/classroom-links.js?v=20260729c"></script>
+<script src="assets/unit1.js?v=20260730a"></script>
+<script src="assets/unit2.js?v=20260729c"></script>
+<script src="assets/unit3.js?v=20260729c"></script>
+<script src="assets/unit4.js?v=20260729c"></script>
+<script src="assets/presenter-guidance.js?v=20260729c"></script>
+<script>
+(function () {
+  var UNITS = [
+    { n: 1, list: typeof UNIT1_LESSONS !== "undefined" ? UNIT1_LESSONS : [] },
+    { n: 2, list: typeof UNIT2_LESSONS !== "undefined" ? UNIT2_LESSONS : [] },
+    { n: 3, list: typeof UNIT3_LESSONS !== "undefined" ? UNIT3_LESSONS : [] },
+    { n: 4, list: typeof UNIT4_LESSONS !== "undefined" ? UNIT4_LESSONS : [] }
+  ];
+  var links = typeof CLASSROOM_LINKS !== "undefined" ? CLASSROOM_LINKS : {};
+
+  function row(l, unit) {
+    var t = l.lessonType || "build";
+    var guidance = t === "assessment" ? {} : APCSAPresenterGuidance.forLesson(l);
+    return {
+      unit: unit, number: l.number, id: l.id, type: t,
+      zip: !!l.download,
+      missions: (l.missions || []).length,
+      checks: (l.checks || []).length,
+      predict: !!(l.predict || l.prediction),
+      model: !!(l.modelCode || l.model),
+      ap: !!l.apTransfer,
+      reflect: !!l.reflection,
+      presenter: Object.keys(guidance).length,
+      presenterSource: t === "assessment" ? "" : APCSAPresenterGuidance.source(l),
+      processing: !!(l.processing || l.vp),
+      classroom: !!links[l.id],
+      scope: l.assessment && l.assessment.scope ? l.assessment.scope.length : 0,
+      conditions: l.assessment && l.assessment.conditions ? l.assessment.conditions.length : 0,
+      protected: t === "assessment" && !l.download && !(l.missions || []).length && !(l.checks || []).length
+    };
+  }
+
+  // Required authored contract. Optional Processing and annual Classroom URLs are reported elsewhere.
+  function expected(t) {
+    if (t === "assessment") return { scope:1, conditions:1, protected:1 };
+    var core = { missions:4, checks:3, predict:1, model:1, ap:1, reflect:1, presenter:1 };
+    if (t === "build") core.zip = 1;
+    return core;
+  }
+
+  function gapsFor(r) {
+    var e = expected(r.type), g = [];
+    if (e.zip && !r.zip) g.push("no ZIP");
+    if (e.missions && r.missions < e.missions) g.push("missions " + r.missions + "/" + e.missions);
+    if (e.checks && r.checks < e.checks) g.push("checks " + r.checks + "/" + e.checks);
+    if (e.predict && !r.predict) g.push("no prediction");
+    if (e.model && !r.model) g.push("no worked model");
+    if (e.ap && !r.ap) g.push("no AP transfer");
+    if (e.reflect && !r.reflect) g.push("no reflection");
+    if (e.presenter && !r.presenter) g.push("no presenter guidance");
+    if (e.scope && !r.scope) g.push("no assessment scope");
+    if (e.conditions && !r.conditions) g.push("no assessment conditions");
+    if (e.protected && !r.protected) g.push("public assessment material exposed");
+    return g;
+  }
+
+  var rows = [];
+  UNITS.forEach(function (u) { u.list.forEach(function (l) { rows.push(row(l, u.n)); }); });
+
+  var nonAssess = rows.filter(function (r) { return r.type !== "assessment"; });
+  var builds = rows.filter(function (r) { return r.type === "build"; });
+
+  function card(value, total, label, tone) {
+    return '<div class="' + (tone || "") + '"><strong>' + value +
+      (total ? " / " + total : "") + "</strong><span>" + label + "</span></div>";
+  }
+
+  var readyN = rows.filter(function (r) { return !gapsFor(r).length; }).length;
+  var notesN = nonAssess.filter(function (r) { return r.presenter > 0; }).length;
+  var customN = nonAssess.filter(function (r) { return r.presenterSource === "custom + shared"; }).length;
+  var procN  = builds.filter(function (r) { return r.processing; }).length;
+  var clN    = builds.filter(function (r) { return r.classroom; }).length;
+
+  document.getElementById("rollup").innerHTML =
+    card(rows.length, 0, "lessons across Units 1–4") +
+    card(builds.length, 0, "build lessons") +
+    card(readyN, rows.length, "meeting pages meet their type contract", readyN < rows.length ? "bad" : "") +
+    card(notesN, nonAssess.length, "with presenter guidance (" + customN + " custom)", notesN < nonAssess.length ? "bad" : "") +
+    card(procN, builds.length, "builds with an optional Processing extension") +
+    card(clN, builds.length, "builds with a current Classroom URL", clN < builds.length ? "warn" : "");
+
+  var gapRows = rows.map(function (r) { return { r: r, g: gapsFor(r) }; })
+                    .filter(function (x) { return x.g.length; });
+
+  document.getElementById("gaps").innerHTML = gapRows.length
+    ? gapRows.map(function (x) {
+        return '<p><code>' + x.r.id + '</code> <span class="tag">' + x.r.type +
+               '</span> — <span class="no">' + x.g.join(" · ") + "</span></p>";
+      }).join("")
+    : '<p class="yes">No gaps. Every lesson meets the required contract for its type.</p>';
+
+  var missingClassroom = builds.filter(function (r) { return !r.classroom; });
+  document.getElementById("configuration").innerHTML = missingClassroom.length
+    ? '<p><strong>' + missingClassroom.length + ' build lessons need current-course Classroom URLs.</strong> ' +
+      'This does not block the workbook, project downloads, slip copy, or slip download. It only withholds the per-lesson Open Classroom link.</p>' +
+      '<details><summary>Show lesson IDs</summary><p><code>' + missingClassroom.map(function (r) { return r.id; }).join(' · ') + '</code></p></details>'
+    : '<p class="yes">Every build lesson has a current-course Classroom URL.</p>';
+
+  function mark(ok) { return ok ? '<span class="yes">yes</span>' : '<span class="no">no</span>'; }
+  function num(v, min) { return '<span class="' + (v >= min ? "yes" : "no") + '">' + v + "</span>"; }
+
+  document.getElementById("matrix").innerHTML = rows.map(function (r) {
+    var isB = r.type === "build", isA = r.type === "assessment";
+    var na = '<span class="na">—</span>';
+    var project = isA ? '<span class="yes">protected</span>'
+      : isB ? mark(r.zip)
+      : r.zip ? '<span class="yes">yes</span>' : '<span class="na">classroom / paper</span>';
+    var lessonHref = "unit" + r.unit + "/lesson-" + String(r.number).padStart(2, "0") + ".html";
+    return '<tr><td><a href="' + lessonHref + '"><code>' + r.id + "</code></a></td><td>" + r.type + "</td>" +
+      "<td>" + project + "</td>" +
+      "<td>" + (isA ? na : num(r.missions, 4)) + "</td>" +
+      "<td>" + (isA ? na : num(r.checks, 3)) + "</td>" +
+      "<td>" + (isA ? na : mark(r.predict)) + "</td>" +
+      "<td>" + (isA ? na : mark(r.model)) + "</td>" +
+      "<td>" + (isA ? na : mark(r.ap)) + "</td>" +
+      "<td>" + (isA ? na : mark(r.reflect)) + "</td>" +
+      "<td>" + (isA ? na : '<span class="yes">' + r.presenterSource + "</span>") + "</td>" +
+      "<td>" + (isB && r.processing ? '<span class="yes">yes</span>' : '<span class="na">optional</span>') + "</td>" +
+      "<td>" + (isB ? (r.classroom ? '<span class="yes">configured</span>' : '<span class="no">not set</span>') : na) + "</td></tr>";
+  }).join("");
+})();
+</script>
+</body>
+</html>

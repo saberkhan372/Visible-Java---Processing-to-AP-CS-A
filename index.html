@@ -1,0 +1,260 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Start here — AP Computer Science A</title>
+<meta name="description" content="A bridge for students who learned Java in Processing and are heading into AP Computer Science A.">
+<link rel="stylesheet" href="assets/site.css">
+</head>
+<body>
+
+<a class="skip-link" href="#main-content">Skip to content</a>
+
+<header class="masthead">
+  <div class="wrap">
+    <a class="logo" href="index.html">AP CS A <span class="arrow">&middot;</span> <span class="logo-sub">built on your sketches</span></a>
+    <nav aria-label="Primary navigation">
+      <a href="index.html" aria-current="page">Start</a>
+      <a href="calendar.html">Calendar</a>
+      <a href="path.html">Units</a>
+      <a href="examples.html">Compare</a>
+      <a href="translate.html">Translate</a>
+      <a href="port.html">Port</a>
+      <a href="traps.html">Traps</a>
+      <a href="frq.html">FRQ</a>
+      <a href="setup.html">Setup</a>
+      <a href="camp.html">Camp</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main-content" tabindex="-1">
+
+<section>
+  <div class="wrap stack">
+    <span class="eyebrow">AP Computer Science A &middot; 2026&ndash;27 &middot; E block</span>
+    <h1>You already write Java.<br>This year you make it formal.</h1>
+    <p class="lede">
+      This is the course site: the calendar, the units, the free-response work, and the
+      tools. What makes it yours is that it never starts from zero. Everything here is
+      anchored to something you already built in Processing &mdash; the sketches, the
+      classes, the arrays of objects, the grids. You are not learning Java. You are
+      learning the rest of it.
+    </p>
+
+    <div class="seam" style="margin-top:0.6rem">
+      <div class="side side-a">
+        <div class="side-head"><span class="dot"></span>What you wrote last year</div>
+<pre><span class="k">float</span> y = <span class="n">0</span>;
+
+<span class="k">void</span> <span class="t">setup</span>() {
+  <span class="t">size</span>(<span class="n">400</span>, <span class="n">400</span>);
+}
+
+<span class="k">void</span> <span class="t">draw</span>() {
+  <span class="t">background</span>(<span class="n">255</span>);
+  <span class="t">ellipse</span>(<span class="n">200</span>, y, <span class="n">40</span>, <span class="n">40</span>);
+  y = y + <span class="n">2</span>;
+}</pre>
+      </div>
+      <div class="side side-b">
+        <div class="side-head"><span class="dot"></span>What the exam wants</div>
+<pre><span class="k">public class</span> <span class="t">Ball</span> {
+  <span class="k">private double</span> y;
+
+  <span class="k">public</span> <span class="t">Ball</span>() { y = <span class="n">0</span>; }
+
+  <span class="k">public void</span> <span class="t">move</span>() { y = y + <span class="n">2</span>; }
+
+  <span class="k">public double</span> <span class="t">getY</span>() { <span class="k">return</span> y; }
+}
+
+<span class="c">// somewhere else entirely:</span>
+<span class="t">Ball</span> b = <span class="k">new</span> <span class="t">Ball</span>();
+<span class="k">for</span> (<span class="k">int</span> i = <span class="n">0</span>; i &lt; <span class="n">3</span>; i++) {
+  b.<span class="t">move</span>();
+  <span class="t">System</span>.out.<span class="t">println</span>(b.<span class="t">getY</span>());
+}</pre>
+      </div>
+    </div>
+    <p style="font-size:0.88rem;color:var(--ink-3)">
+      Same program. The global became an instance variable, <code>float</code> became
+      <code>double</code>, <code>draw()</code> became somebody else's loop, and the picture
+      became three lines of text. That seam runs through the whole year &mdash;
+      <a href="examples.html">Compare</a> shows ten more, each in three runnable versions.
+    </p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap stack-lg">
+    <div class="stack">
+      <span class="eyebrow">The good news first</span>
+      <h2>The course got smaller in 2025</h2>
+      <p>
+        College Board rewrote AP CS A for the 2025&ndash;26 school year. Ten units became
+        four, the exam moved into Bluebook on a computer, and a stack of topics was cut
+        outright. If you are looking at an older review book or an older website, it is
+        teaching you things that can no longer appear on the exam.
+      </p>
+    </div>
+
+    <div class="grid">
+      <div class="note cut">
+        <h3>Cut &mdash; don't study these</h3>
+        <div class="tags">
+          <span class="tag tag-cut">inheritance</span>
+          <span class="tag tag-cut">polymorphism</span>
+          <span class="tag tag-cut">extends</span>
+          <span class="tag tag-cut">super</span>
+          <span class="tag tag-cut">interfaces</span>
+          <span class="tag tag-cut">writing recursion</span>
+        </div>
+        <p>
+          The course description says it outright: <em>"Designing and implementing
+          inheritance relationships are outside the scope of the AP Computer Science A
+          course and exam."</em> You should still recognise the word <em>superclass</em> if
+          it turns up in a question &mdash; you will simply never be asked to build one. If
+          a practice question wants a subclass, it is out of date.
+        </p>
+      </div>
+      <div class="note">
+        <h3>Added &mdash; and barely covered elsewhere</h3>
+        <div class="tags">
+          <span class="tag tag-new">text files</span>
+          <span class="tag tag-new">Scanner</span>
+          <span class="tag tag-new">data sets</span>
+          <span class="tag tag-new">tracing recursion</span>
+        </div>
+        <p>
+          Reading a file, pulling numbers out of it, and reasoning about which data you'd
+          need to answer a question. Most review sites have not caught up yet.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap stack-lg">
+    <div class="stack">
+      <span class="eyebrow">Placement</span>
+      <h2>Four things you are actually missing</h2>
+      <p>
+        Nearly everything else on the syllabus is a variation on something you have already
+        shipped. These four are not, and they are where the year is won or lost.
+      </p>
+    </div>
+    <div class="grid">
+      <div class="card">
+        <h3>Static context</h3>
+        <p>
+          The Processing editor hid <code>main</code> from you. Now it's back, and
+          <em>"non-static method cannot be referenced from a static context"</em> becomes
+          the error you see most often. Nothing in a sketch prepares you for it.
+        </p>
+      </div>
+      <div class="card">
+        <h3>Reading, not building</h3>
+        <p>
+          Processing rewards making things. College Board scores the multiple choice
+          against five skills, and the largest by a distance is <strong>Analyze Code, at
+          37&ndash;53%</strong> &mdash; more than <em>writing</em> code, which is 22&ndash;38%.
+          Up to half the section is reading somebody else's program with no Run button.
+        </p>
+      </div>
+      <div class="card">
+        <h3>References and aliasing</h3>
+        <p>
+          You have made hundreds of objects and traced approximately zero. After
+          <code>p1 = p2;</code>, what does <code>p1</code> print? This is heavily tested
+          and it is the most common wipeout.
+        </p>
+      </div>
+      <div class="card">
+        <h3>Data you didn't invent</h3>
+        <p>
+          Reading a text file with <code>Scanner</code>, parsing it, and working with data
+          sets. New to you, and new to the course as of 2025 &mdash; so almost nobody has
+          good material on it yet.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap stack-lg">
+    <div class="stack">
+      <span class="eyebrow">Where to go</span>
+      <h2>The course, and the bridge back</h2>
+      <p>
+        The first three are the spine of the year. The rest are there so that when
+        something is new, you can find the version of it you already know.
+      </p>
+    </div>
+    <div class="grid">
+      <div class="card">
+        <h3><a href="calendar.html">Calendar</a></h3>
+        <p>All 71 meetings with dates, times, topics and test dates. E block rotates through four periods &mdash; check the time, not just the day.</p>
+      </div>
+      <div class="card">
+        <h3><a href="path.html">Units</a></h3>
+        <p>Unit by unit: what to read, what to drill, and what to skim because you already know it.</p>
+      </div>
+      <div class="card">
+        <h3><a href="frq.html">Free response</a></h3>
+        <p>The four questions, what each is worth, and how to read a prompt without panicking.</p>
+      </div>
+      <div class="card">
+        <h3><a href="examples.html">Compare</a></h3>
+        <p>Ten programs written three ways &mdash; Processing, Java with Processing, exam Java. Copy any of them and run it.</p>
+      </div>
+      <div class="card">
+        <h3><a href="translate.html">Translate</a></h3>
+        <p>Every habit from last year and its replacement. Read this once now, then keep it open for the first month.</p>
+      </div>
+      <div class="card">
+        <h3><a href="port.html">Port</a></h3>
+        <p>Rebuild a sketch you already finished as exam-legal Java. Two hours here beats two weeks of reading.</p>
+      </div>
+      <div class="card">
+        <h3><a href="traps.html">Traps</a></h3>
+        <p>Eighteen short traps. Commit to an answer before you reveal it &mdash; that is the exam skill.</p>
+      </div>
+      <div class="card">
+        <h3><a href="setup.html">Setup</a></h3>
+        <p>Getting a real IDE running, reading a stack trace, and the errors you'll hit in week one.</p>
+      </div>
+      <div class="card">
+        <h3><a href="camp.html">Camp</a></h3>
+        <p>A proposed free CC Fest workshop for educators who want to make AP Java visible through Processing projects.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap stack-sm">
+    <p>
+      Course structure, unit weights and exam format follow the AP Computer Science A
+      Course and Exam Description effective Fall 2025. Verify anything that matters
+      against <a href="https://apcentral.collegeboard.org/courses/ap-computer-science-a">AP Central</a>.
+    </p>
+    <p><button class="reveal-btn" type="button" id="theme">Switch theme</button></p>
+  </div>
+</footer>
+
+<script>
+  document.getElementById("theme").addEventListener("click", () => {
+    const root = document.documentElement;
+    const dark = getComputedStyle(root).getPropertyValue("--ground").trim() === "#111917";
+    root.setAttribute("data-theme", dark ? "light" : "dark");
+  });
+</script>
+<script src="assets/role.js?v=20260729c"></script>
+</body>
+</html>

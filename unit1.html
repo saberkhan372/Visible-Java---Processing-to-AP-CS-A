@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Unit 1 workbook — AP Computer Science A</title>
+<meta name="description" content="AP Computer Science A Unit 1 workbook: Java program structure, expressions, methods, objects, references, and String methods with verified editor projects.">
+<link rel="stylesheet" href="assets/site.css?v=20260729c">
+</head>
+<body>
+
+<a class="skip-link" href="#main-content">Skip to content</a>
+
+<header class="masthead">
+  <div class="wrap">
+    <a class="logo" href="index.html">AP CS A <span class="arrow">&middot;</span> <span class="logo-sub">built on your sketches</span></a>
+    <nav aria-label="Primary navigation">
+      <a href="index.html">Start</a><a href="calendar.html">Calendar</a><a href="path.html" aria-current="page">Units</a><a href="examples.html">Compare</a><a href="translate.html">Translate</a><a href="port.html">Port</a><a href="traps.html">Traps</a><a href="frq.html">FRQ</a><a href="setup.html">Setup</a>
+      <a href="camp.html">Camp</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main-content" tabindex="-1">
+  <section class="unit-overview-hero workbook-unit-hero">
+    <div class="wrap stack">
+      <span class="eyebrow">Unit 1 &middot; 11 meetings &middot; 4 Sep &ndash; 6 Oct &middot; workbook</span>
+      <h1>Using Objects and Methods</h1>
+      <p class="lede">Make the Java hidden inside your Processing sketches explicit. Predict here, build and test complete projects in your Java editor, then return with evidence you can export to the LMS.</p>
+
+      <div class="unit-nav">
+        <a href="unit1.html" aria-current="page">Unit 1 &middot; workbook</a>
+        <a href="unit2.html">Unit 2 &middot; workbook</a>
+        <a href="unit3.html">Unit 3 &middot; workbook</a>
+        <a href="unit4.html">Unit 4 &middot; workbook</a>
+        <a href="calendar.html">Full calendar</a>
+      </div>
+
+      <div class="unit-facts" aria-label="Unit 1 facts">
+        <div><strong>15–25%</strong><span>of multiple choice</span></div>
+        <div><strong>1.1–1.15</strong><span>CED topics</span></div>
+        <div><strong>9 + 1 + 1</strong><span>builds, review, assessment</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap unit-anchor-grid">
+      <div class="stack">
+        <span class="eyebrow">The unit in one picture</span>
+        <h2>A variable can hold a value or a reference</h2>
+        <p>Primitive assignment copies a value. Object assignment copies a reference. That distinction connects expressions, method arguments, construction, aliasing, and every object trace in the unit.</p>
+        <div class="reference-flow-viz" role="img" aria-label="Diagram comparing primitive assignment, which creates two independent integer values, with object assignment, which creates two variables pointing to one Player object">
+          <div class="reference-case"><strong>int b = a;</strong><div class="reference-pair"><span>a → 4</span><span>b → 4</span></div><small>two independent values</small></div>
+          <div class="reference-case"><strong>Player b = a;</strong><div class="reference-pair reference-shared"><span>a ↘</span><span>Player<br>name: Ada<br>score: 4</span><span>b ↗</span></div><small>one object, two references</small></div>
+        </div>
+      </div>
+
+      <div class="unit-java-anchor">
+        <div class="tri-bar"><span>AP Java anchor</span></div>
+        <pre><span class="t">Player</span> a = <span class="k">new</span> <span class="t">Player</span>(<span class="s">"Ada"</span>, <span class="n">4</span>);
+<span class="t">Player</span> b = a;
+
+b.addScore(<span class="n">3</span>);
+
+<span class="t">System</span>.out.println(a.getScore()); <span class="c">// 7</span></pre>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap stack-lg">
+      <div class="stack"><span class="eyebrow">The workbook loop</span><h2>Use the same learning system as Unit 2</h2></div>
+      <div class="unit-moves">
+        <article><span>01</span><h3>Predict and model</h3><p>Commit to a compiler result, value, bound, or reference trace before revealing the reasoning.</p></article>
+        <article><span>02</span><h3>Build and test</h3><p>Download a complete Java project, run its unchanged baseline, complete missions, and execute readable checks.</p></article>
+        <article><span>03</span><h3>Transfer and save</h3><p>Write in AP form, record evidence, and export to the LMS. A visit alone never marks a lesson complete.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="workbook-dashboard-section">
+    <div class="wrap workbook-dashboard">
+      <div class="stack">
+        <span class="eyebrow">Local working copy</span>
+        <h2>Resume the workbook</h2>
+        <p id="workbook-progress-summary">Loading local progress…</p>
+        <div class="dashboard-actions"><a id="workbook-resume" class="workbook-download" href="unit1/lesson-01.html">Start lesson 1</a><button id="export-workbook-unit" type="button">Export Unit 1 Markdown</button><button id="backup-workbook" type="button">Back up JSON</button><label class="import-label">Import JSON<input id="import-workbook" type="file" accept="application/json"></label></div>
+      </div>
+      <div class="editor-panel">
+        <label>My Java editor <select data-editor-select></select></label>
+        <p>Choose once; the same editor profile is used across Unit 1 and Unit 2.</p>
+        <p><strong>The LMS is the system of record.</strong> This browser stores only a working copy.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="unit1-lessons">
+    <div class="wrap stack-lg">
+      <div class="stack">
+        <span class="eyebrow">Meeting by meeting</span>
+        <h2>Unit 1 lessons</h2>
+        <p>Nine verified Java projects lead to a mixed-retrieval review bundle and an assessment page with no public test content.</p>
+      </div>
+      <div id="unit1-lesson-grid" class="unit-lesson-grid"></div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap stack-lg">
+      <div class="stack"><span class="eyebrow">Remixed from this folder</span><h2>Existing work becomes tested projects</h2></div>
+      <div class="material-map">
+        <div><strong>M&amp;M's Parameters</strong><span>primitive copies, mutable objects, references, aliasing, and pass-by-value traces</span></div>
+        <div><strong>String Activity</strong><span>index rows, substring boundaries, searches, and safe missing-result handling</span></div>
+        <div><strong>String Output Lineup</strong><span>prediction volume before compiler feedback</span></div>
+        <div><strong>String Four Corners</strong><span>small method problems, edge cases, and peer explanation</span></div>
+        <div><strong>Unit 1 More Labs</strong><span>Point, Dice, Math, random ranges, String comparisons, and extension problems</span></div>
+        <div><strong>Processing projects</strong><span>optional visual transfer prompts preserve continuity without replacing required standard Java</span></div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer><div class="wrap"><p>Unit 1 and Unit 2 now share one workbook renderer, editor profile, local evidence store, export format, and release system. Processing prompts remain optional until their separate toolchain gate passes.</p></div></footer>
+<div id="workbook-live" class="sr-only" aria-live="polite"></div>
+
+<script src="assets/content.js"></script>
+<script src="assets/calendar.js"></script>
+<script src="assets/role.js?v=20260729c"></script>
+<script src="assets/classroom-links.js?v=20260729c"></script>
+<script src="assets/unit1.js?v=20260730a"></script>
+<script src="assets/workbook-present.js?v=20260730a"></script>
+<script src="assets/workbook.js?v=20260730a"></script>
+<script>renderWorkbookOverview("unit1-lesson-grid");</script>
+</body>
+</html>

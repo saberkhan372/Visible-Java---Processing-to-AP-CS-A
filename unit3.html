@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Unit 3 workbook — AP Computer Science A</title><meta name="description" content="AP Computer Science A Unit 3 workbook: class design, constructors, methods, references, static, scope, and complete-class FRQ practice.">
+<link rel="stylesheet" href="assets/site.css?v=20260729c"></head><body>
+<a class="skip-link" href="#main-content">Skip to content</a>
+<header class="masthead"><div class="wrap"><a class="logo" href="index.html">AP CS A <span class="arrow">&middot;</span> <span class="logo-sub">built on your sketches</span></a><nav aria-label="Primary navigation"><a href="index.html">Start</a><a href="calendar.html">Calendar</a><a href="path.html" aria-current="page">Units</a><a href="examples.html">Compare</a><a href="translate.html">Translate</a><a href="port.html">Port</a><a href="traps.html">Traps</a><a href="frq.html">FRQ</a><a href="setup.html">Setup</a>
+      <a href="camp.html">Camp</a></nav></div></header>
+<main id="main-content" tabindex="-1">
+<section class="unit-overview-hero workbook-unit-hero"><div class="wrap stack">
+<span class="eyebrow">Unit 3 &middot; 13 meetings &middot; 11 Nov &ndash; 8 Jan &middot; workbook</span>
+<h1>Class Creation</h1>
+<p class="lede">Turn sketch-style objects into disciplined Java classes: private state, constructors that establish valid objects, methods that return useful values, and explicit ownership of shared state.</p>
+<div class="unit-nav"><a href="unit1.html">Unit 1</a><a href="unit2.html">Unit 2</a><a href="unit3.html" aria-current="page">Unit 3</a><a href="unit4.html">Unit 4</a><a href="calendar.html">Full calendar</a></div>
+<div class="unit-facts" aria-label="Unit 3 facts"><div><strong>10–18%</strong><span>of multiple choice</span></div><div><strong>7 points</strong><span>complete-class FRQ</span></div><div><strong>10 + 2 + 1</strong><span>builds, paper cycles, test</span></div></div>
+</div></section>
+<section><div class="wrap unit-anchor-grid">
+<div class="stack"><span class="eyebrow">The unit in one picture</span><h2>A class protects a contract</h2><p>Client code asks through public methods. Private fields hold the object's state. The constructor establishes the first valid state; every later method preserves it.</p>
+<div class="control-flow-viz" role="img" aria-label="Client code sends a method call through a public interface to private object state, then receives a result">
+<div class="flow-node flow-input">client</div><span aria-hidden="true">→</span><div class="flow-node flow-test">public<br>method</div><span aria-hidden="true">→</span><div class="flow-node flow-action">private<br>state</div><span class="flow-return" aria-hidden="true">result returns to client</span></div></div>
+<div class="unit-java-anchor"><div class="tri-bar"><span>AP Java anchor</span></div><pre><span class="k">public class</span> <span class="t">Tracker</span> {
+  <span class="k">private int</span> total;
+
+  <span class="k">public</span> Tracker(<span class="k">int</span> start) {
+    total = start;
+  }
+
+  <span class="k">public int</span> add(<span class="k">int</span> amount) {
+    total += amount;
+    <span class="k">return</span> total;
+  }
+}</pre></div>
+</div></section>
+<section><div class="wrap stack-lg"><div class="stack"><span class="eyebrow">The workbook loop</span><h2>Design, build, then write without the editor</h2></div><div class="unit-moves">
+<article><span>01</span><h3>Predict ownership</h3><p>Decide which object owns a field, method, or reference before coding.</p></article>
+<article><span>02</span><h3>Build the contract</h3><p>Run a verified project and use executable checks to expose missing class behavior.</p></article>
+<article><span>03</span><h3>Transfer to paper</h3><p>Finish with complete-class practice where compiler help is deliberately unavailable.</p></article>
+</div></div></section>
+<section class="workbook-dashboard-section"><div class="wrap workbook-dashboard"><div class="stack"><span class="eyebrow">Local working copy</span><h2>Resume the workbook</h2><p id="workbook-progress-summary">Loading local progress…</p><div class="dashboard-actions"><a id="workbook-resume" class="workbook-download" href="unit3/lesson-23.html">Start lesson 1</a><button id="export-workbook-unit" type="button">Export Unit 3 Markdown</button><button id="backup-workbook" type="button">Back up JSON</button><label class="import-label">Import JSON<input id="import-workbook" type="file" accept="application/json"></label></div></div><div class="editor-panel"><label>My Java editor <select data-editor-select></select></label><p>Choose once; each editor build shows the matching directions.</p><p><strong>The LMS is the system of record.</strong> This browser stores only a working copy.</p></div></div></section>
+<section id="unit3-lessons"><div class="wrap stack-lg"><div class="stack"><span class="eyebrow">Meeting by meeting</span><h2>Unit 3 lessons</h2><p>Ten verified projects build the class-writing pattern; two paper-first cycles remove compiler support before the protected test.</p></div><div id="unit3-lesson-grid" class="unit-lesson-grid"></div></div></section>
+<section><div class="wrap stack-lg"><div class="stack"><span class="eyebrow">Remixed from this folder</span><h2>Existing class work becomes rubric-aware practice</h2></div><div class="material-map">
+<div><strong>UML handouts</strong><span>Card, Duck, GamePiece, and Hotel become responsibility and contract decisions</span></div>
+<div><strong>Bicycle lab</strong><span>private state, constructors, and client-facing behavior gain executable checks</span></div>
+<div><strong>Elevator and Password Validator</strong><span>return values, validation, accessors, mutators, and observable contracts</span></div>
+<div><strong>Tracing References</strong><span>aliasing returns from the class author's side</span></div>
+<div><strong>CupcakeMachine / StepTracker pattern</strong><span>paper-first complete-class practice without republishing protected prompts</span></div>
+<div><strong>Retired inheritance work</strong><span>kept out of the exam-facing path</span></div>
+</div></div></section>
+</main><footer><div class="wrap"><p>Unit 3 uses the shared workbook and presentation system. Java 17 projects are compiled and checked before publication; secure assessment content remains in the classroom system.</p></div></footer><div id="workbook-live" class="sr-only" aria-live="polite"></div>
+<script src="assets/content.js"></script><script src="assets/calendar.js"></script><script src="assets/role.js?v=20260729c"></script><script src="assets/classroom-links.js?v=20260729c"></script><script src="assets/unit3.js?v=20260729c"></script><script src="assets/workbook-present.js?v=20260730a"></script><script src="assets/workbook.js?v=20260730a"></script><script>renderWorkbookOverview("unit3-lesson-grid");</script>
+</body></html>

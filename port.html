@@ -1,0 +1,345 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Port your own project — AP Computer Science A</title>
+<meta name="description" content="Rebuild a sketch you already wrote as exam-legal Java. The fastest way across the gap.">
+<link rel="stylesheet" href="assets/site.css">
+</head>
+<body>
+
+<a class="skip-link" href="#main-content">Skip to content</a>
+
+<header class="masthead">
+  <div class="wrap">
+    <a class="logo" href="index.html">AP CS A <span class="arrow">&middot;</span> <span class="logo-sub">built on your sketches</span></a>
+    <nav aria-label="Primary navigation">
+      <a href="index.html">Start</a>
+      <a href="calendar.html">Calendar</a>
+      <a href="path.html">Units</a>
+      <a href="examples.html">Compare</a>
+      <a href="translate.html">Translate</a>
+      <a href="port.html" aria-current="page">Port</a>
+      <a href="traps.html">Traps</a>
+      <a href="frq.html">FRQ</a>
+      <a href="setup.html">Setup</a>
+      <a href="camp.html">Camp</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main-content" tabindex="-1">
+
+<section>
+  <div class="wrap stack">
+    <span class="eyebrow">The shortcut</span>
+    <h1>Rebuild something you already made</h1>
+    <p class="lede">
+      You do not need a new project to learn AP Java. You need to take one you already
+      finished and rewrite it without the canvas. Everything the exam asks you to write,
+      you have already written &mdash; in a different costume. This page shows the costume
+      change on real code from last year.
+    </p>
+    <div class="note">
+      <p>
+        <strong>Do this once, properly, before September.</strong> Two hours porting your
+        own bouncing-ball sketch will teach you more about <code>private</code>,
+        <code>double</code>, constructors and accessors than two weeks of reading about
+        them, because you already know exactly what the program is supposed to do.
+      </p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap stack-lg">
+    <div class="stack">
+      <span class="eyebrow">Step one</span>
+      <h2>Your Ball class is a Question 2 answer</h2>
+      <p>
+        Free-response Question 2 is worth 7 points and asks you to design a class with a
+        header, instance variables, a constructor, and a method. Here is a class from last
+        year's collision sketch, next to the same class written the way a rubric wants it.
+      </p>
+    </div>
+
+    <div class="seam">
+      <div class="side side-a">
+        <div class="side-head"><span class="dot"></span>What you wrote</div>
+<pre><span class="k">class</span> <span class="t">Ball</span> {
+  <span class="k">float</span> x;
+  <span class="k">float</span> y;
+  <span class="k">float</span> dx;
+  <span class="k">float</span> dy;
+  <span class="k">float</span> r;
+
+  <span class="t">Ball</span>() {
+    x = <span class="t">random</span>(<span class="n">100</span>, <span class="n">700</span>);
+    y = <span class="t">random</span>(<span class="n">100</span>, <span class="n">700</span>);
+    dx = <span class="t">random</span>(-<span class="n">5</span>, <span class="n">5</span>);
+    dy = <span class="t">random</span>(-<span class="n">5</span>, <span class="n">5</span>);
+    r = <span class="n">10</span>;
+  }
+
+  <span class="k">void</span> <span class="t">display</span>() {
+    <span class="t">fill</span>(<span class="n">200</span>);
+    <span class="t">circle</span>(x, y, r);
+  }
+
+  <span class="k">void</span> <span class="t">move</span>() {
+    x = x + dx;
+    y = y + dy;
+  }
+}</pre>
+      </div>
+      <div class="side side-b">
+        <div class="side-head"><span class="dot"></span>What earns the points</div>
+<pre><span class="k">public class</span> <span class="t">Ball</span> {
+  <span class="k">private double</span> x;
+  <span class="k">private double</span> y;
+  <span class="k">private double</span> dx;
+  <span class="k">private double</span> dy;
+  <span class="k">private double</span> r;
+
+  <span class="k">public</span> <span class="t">Ball</span>(<span class="k">double</span> startX, <span class="k">double</span> startY) {
+    x = startX;
+    y = startY;
+    dx = <span class="n">1.5</span>;
+    dy = <span class="n">2.0</span>;
+    r = <span class="n">10</span>;
+  }
+
+  <span class="k">public double</span> <span class="t">getX</span>() { <span class="k">return</span> x; }
+  <span class="k">public double</span> <span class="t">getY</span>() { <span class="k">return</span> y; }
+
+  <span class="k">public void</span> <span class="t">move</span>() {
+    x = x + dx;
+    y = y + dy;
+  }
+
+  <span class="k">public</span> <span class="t">String</span> <span class="t">toString</span>() {
+    <span class="k">return</span> <span class="s">"Ball at ("</span> + x + <span class="s">", "</span> + y + <span class="s">")"</span>;
+  }
+}</pre>
+      </div>
+    </div>
+
+    <div class="stack">
+      <h3>Six changes, and that is the whole exercise</h3>
+      <ul class="plain">
+        <li><strong><code>class</code> &rarr; <code>public class</code>,</strong> and the file must be named <code>Ball.java</code>.</li>
+        <li><strong>Fields become <code>private</code>.</strong> Across all 140 sketches from last year there is not one access modifier. On a rubric this is points, every time.</li>
+        <li><strong><code>float</code> &rarr; <code>double</code>.</strong> Mechanical, but <code>float</code> is not in the tested subset at all.</li>
+        <li><strong>The constructor takes parameters.</strong> Yours hard-coded <code>random()</code> inside. Exam constructors are handed their starting values.</li>
+        <li><strong>Accessors appear.</strong> Once the fields are private, other classes need <code>getX()</code> to read them. Last year only five methods in the entire folder returned a value &mdash; nearly everything was <code>void</code>.</li>
+        <li><strong><code>display()</code> &rarr; <code>toString()</code>.</strong> The object still describes itself; it just does it in words now.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap stack-lg">
+    <div class="stack">
+      <span class="eyebrow">Step two</span>
+      <h2>Your collision loop is a Question 3 answer</h2>
+      <p>
+        This is the one worth sitting with. Question 3 gives you a collection of objects and
+        asks you to count the ones matching some condition, usually by comparing items
+        against each other. Look at what you already wrote to make balls bounce off one
+        another:
+      </p>
+    </div>
+
+    <div class="seam">
+      <div class="side side-a">
+        <div class="side-head"><span class="dot"></span>Your collision check</div>
+<pre><span class="k">for</span> (<span class="k">int</span> i = <span class="n">0</span>; i &lt; ballList.length; i++) {
+  <span class="k">for</span> (<span class="k">int</span> j = <span class="n">0</span>; j &lt; ballList.length; j++) {
+    <span class="k">if</span> (i != j) {
+      <span class="k">float</span> d = <span class="t">dist</span>(
+        ballList[i].x, ballList[i].y,
+        ballList[j].x, ballList[j].y);
+
+      <span class="k">if</span> (d &lt; ballList[i].r) {
+        bounce = bounce + <span class="n">1</span>;
+      }
+    }
+  }
+}</pre>
+      </div>
+      <div class="side side-b">
+        <div class="side-head"><span class="dot"></span>The same thing, exam-style</div>
+<pre><span class="k">public int</span> <span class="t">countOverlaps</span>() {
+  <span class="k">int</span> count = <span class="n">0</span>;
+
+  <span class="k">for</span> (<span class="k">int</span> i = <span class="n">0</span>; i &lt; balls.<span class="t">size</span>(); i++) {
+    <span class="k">for</span> (<span class="k">int</span> j = i + <span class="n">1</span>; j &lt; balls.<span class="t">size</span>(); j++) {
+
+      <span class="k">if</span> (balls.<span class="t">get</span>(i).<span class="t">overlaps</span>(balls.<span class="t">get</span>(j))) {
+        count++;
+      }
+    }
+  }
+
+  <span class="k">return</span> count;
+}</pre>
+      </div>
+    </div>
+
+    <div class="note">
+      <p>
+        <strong>Same algorithm. Three differences.</strong> The array became an
+        <code>ArrayList</code>, so <code>[i]</code> became <code>.get(i)</code> and
+        <code>.length</code> became <code>.size()</code>. The method <em>returns</em> a
+        count instead of updating a global. And the inner loop starts at
+        <code>j = i + 1</code> rather than 0.
+      </p>
+      <p>
+        That last one is worth a minute. Starting at <code>i + 1</code> visits each
+        <em>pair</em> exactly once; starting at 0 with an <code>i != j</code> guard visits
+        every pair twice, once in each direction. For counting, that doubles your answer.
+        This is a classic all-pairs pattern and it shows up constantly.
+      </p>
+    </div>
+
+    <p style="font-size:0.9rem;color:var(--ink-2)">
+      For scale: the 2026 exam's Question 3 asked students to compare two lists of student
+      records and count how many people appeared in both with a higher value in one than
+      the other. Structurally, that is your bouncing balls.
+    </p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap stack-lg">
+    <div class="stack">
+      <span class="eyebrow">Step three</span>
+      <h2>Your grid game is a Question 4 answer</h2>
+      <p>
+        2D arrays are the biggest genuinely new thing in the course &mdash; there is not a
+        single <code>[][]</code> anywhere in last year's work &mdash; and they are worth 6
+        points on the free response. But you have already thought in grids. In the Unit 3
+        grid project, moving a character looked like this:
+      </p>
+    </div>
+
+    <div class="seam">
+      <div class="side side-a">
+        <div class="side-head"><span class="dot"></span>Grid by pixel arithmetic</div>
+<pre><span class="k">float</span> characterX = <span class="n">25</span>;
+<span class="k">float</span> characterY = <span class="n">25</span>;
+
+<span class="k">void</span> <span class="t">keyPressed</span>() {
+  <span class="k">if</span> (key == <span class="s">'d'</span>) {
+    characterX = characterX + <span class="n">100</span>;
+  } <span class="k">else if</span> (key == <span class="s">'w'</span>) {
+    characterY = characterY - <span class="n">100</span>;
+  }
+}
+
+<span class="c">// the grid is implied by the +100</span>
+<span class="t">rect</span>(characterX, characterY, <span class="n">50</span>, <span class="n">50</span>);</pre>
+      </div>
+      <div class="side side-b">
+        <div class="side-head"><span class="dot"></span>Grid as a real 2D array</div>
+<pre><span class="k">private</span> <span class="t">String</span>[][] grid;
+<span class="k">private int</span> row;
+<span class="k">private int</span> col;
+
+<span class="k">public void</span> <span class="t">moveRight</span>() {
+  <span class="k">if</span> (col &lt; grid[<span class="n">0</span>].length - <span class="n">1</span>) {
+    col++;
+  }
+}
+
+<span class="c">// the grid is the actual data</span>
+<span class="t">String</span> here = grid[row][col];</pre>
+      </div>
+    </div>
+
+    <div class="note">
+      <p>
+        <strong>You were already storing a grid &mdash; in pixels.</strong>
+        <code>characterX / 100</code> was your column number all along. A 2D array just
+        stores that directly, so the grid can hold <em>contents</em> (a wall, a key, a
+        score) instead of only a position.
+      </p>
+      <p>
+        The two facts to burn in: <code>grid.length</code> is the number of
+        <strong>rows</strong>, <code>grid[0].length</code> is the number of
+        <strong>columns</strong>, and the traversal is always
+        <code>for (row) { for (col) { grid[row][col] } }</code>. Row first, every time.
+      </p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap stack-lg">
+    <div class="stack">
+      <span class="eyebrow">Pick one</span>
+      <h2>Four projects worth porting</h2>
+      <p>Ranked by how much exam ground they cover per hour spent.</p>
+    </div>
+
+    <div class="stack" style="gap:0">
+      <div class="step">
+        <div class="step-label">Best</div>
+        <div class="step-body">
+          <p><strong>The bouncing balls / collision sketch.</strong> Gets you a class with private fields and accessors (Q2), an array or <code>ArrayList</code> of objects, and an all-pairs nested traversal that returns a count (Q3). That is over half the free-response section in one port.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-label">Then</div>
+        <div class="step-body">
+          <p><strong>The Rain Game.</strong> It already has three classes &mdash; Catcher, Drop, Timer &mdash; which is exactly the multi-class setup Question 3 hands you. Port <code>Drop</code> first, then write a method on the game class that counts how many drops were caught.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-label">Then</div>
+        <div class="step-body">
+          <p><strong>Any grid project.</strong> Interactive Grid System, the escape-room game, snow accumulation. Replace the pixel arithmetic with a real 2D array and write one method that scans it &mdash; count the filled cells, find the largest value, check whether a row is complete.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-label">Stretch</div>
+        <div class="step-body">
+          <p><strong>Give a project a save file.</strong> Write the final scores from your game to a text file, then read them back with <code>Scanner</code> and report the highest. File reading is new to the course as well as to you, so almost nobody has practised it &mdash; and doing it with your own data beats doing it with a worksheet.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap stack">
+    <h2>One skill that transfers untouched</h2>
+    <p>
+      Your whole Unit 7 was debugging &mdash; handed a broken Rain Game and told to find the
+      fault. That is the same skill as a large share of the multiple-choice section, where
+      you are shown a method that <em>almost</em> works and asked which line is wrong, what
+      it prints instead, or which input breaks it.
+    </p>
+    <p>
+      The only new part is that Java throws named exceptions rather than just misbehaving.
+      Learn the four on the <a href="setup.html">setup page</a> and you are reading error
+      messages, not guessing at them.
+    </p>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <p>
+      Code examples adapted from last year's Intro to Java sketches. Free-response point
+      values follow the Course and Exam Description effective Fall 2025.
+    </p>
+  </div>
+</footer>
+<script src="assets/role.js?v=20260729c"></script>
+</body>
+</html>

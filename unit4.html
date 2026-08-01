@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Unit 4 workbook — AP Computer Science A</title><meta name="description" content="AP Computer Science A Unit 4 workbook: data, arrays, files, ArrayList, 2D arrays, searching, sorting, and recursion.">
+<link rel="stylesheet" href="assets/site.css?v=20260729c"></head><body>
+<a class="skip-link" href="#main-content">Skip to content</a>
+<header class="masthead"><div class="wrap"><a class="logo" href="index.html">AP CS A <span class="arrow">&middot;</span> <span class="logo-sub">built on your sketches</span></a><nav aria-label="Primary navigation"><a href="index.html">Start</a><a href="calendar.html">Calendar</a><a href="path.html" aria-current="page">Units</a><a href="examples.html">Compare</a><a href="translate.html">Translate</a><a href="port.html">Port</a><a href="traps.html">Traps</a><a href="frq.html">FRQ</a><a href="setup.html">Setup</a>
+      <a href="camp.html">Camp</a></nav></div></header>
+<main id="main-content" tabindex="-1">
+<section class="unit-overview-hero workbook-unit-hero"><div class="wrap stack">
+<span class="eyebrow">Unit 4 &middot; 30 meetings &middot; 12 Jan &ndash; 22 Apr &middot; workbook</span>
+<h1>Data Collections</h1>
+<p class="lede">Learn one durable idea across changing containers: identify the data contract, choose a traversal, preserve an invariant, and test the boundaries. The unit moves through data ethics, arrays, files, ArrayList, 2D structures, and algorithms.</p>
+<div class="unit-nav"><a href="unit1.html">Unit 1</a><a href="unit2.html">Unit 2</a><a href="unit3.html">Unit 3</a><a href="unit4.html" aria-current="page">Unit 4</a><a href="calendar.html">Full calendar</a></div>
+<div class="unit-facts" aria-label="Unit 4 facts"><div><strong>30–40%</strong><span>of multiple choice</span></div><div><strong>11 points</strong><span>collection FRQs</span></div><div><strong>5 arcs</strong><span>one long unit, visible waypoints</span></div></div>
+</div></section>
+<section><div class="wrap unit-anchor-grid">
+<div class="stack"><span class="eyebrow">The unit in one picture</span><h2>The container changes; the reasoning repeats</h2><p>For every collection, name its size, valid positions, traversal order, update rule, and observable result. That same checklist scales from one-dimensional arrays to files, lists, grids, and divide-and-conquer algorithms.</p>
+<div class="control-flow-viz" role="img" aria-label="Data enters a collection, a traversal visits elements, an accumulator or mutation updates state, and a tested result leaves">
+<div class="flow-node flow-input">data</div><span aria-hidden="true">→</span><div class="flow-node flow-test">choose<br>traversal</div><span aria-hidden="true">→</span><div class="flow-node flow-action">inspect or<br>update</div><span class="flow-return" aria-hidden="true">result + evidence</span></div></div>
+<div class="unit-java-anchor"><div class="tri-bar"><span>AP Java anchor</span></div><pre><span class="k">int</span> total = <span class="n">0</span>;
+
+<span class="k">for</span> (<span class="k">int</span> row = <span class="n">0</span>; row &lt; grid.length; row++) {
+  <span class="k">for</span> (<span class="k">int</span> col = <span class="n">0</span>;
+       col &lt; grid[row].length; col++) {
+    total += grid[row][col];
+  }
+}
+
+<span class="k">return</span> total;</pre></div>
+</div></section>
+<section><div class="wrap stack-lg"><div class="stack"><span class="eyebrow">Five arcs</span><h2>Waypoints through the big unit</h2></div><div class="material-map">
+<div><strong>4A · Data and arrays</strong><span>ethics, data fit, creation, traversal, algorithms, rearrangement</span></div>
+<div><strong>4B · Text files</strong><span>File, Scanner, split, parsing, validation, three verified labs</span></div>
+<div><strong>4C · ArrayList</strong><span>wrappers, five methods, traversal, removal, Question 3</span></div>
+<div><strong>4D · Two-dimensional data</strong><span>grid bridge, rectangular traversal, Picture Lab companions</span></div>
+<div><strong>4E · Retrieval and algorithms</strong><span>Question 4, search, sort, and recursion tracing</span></div>
+</div></div></section>
+<section class="workbook-dashboard-section"><div class="wrap workbook-dashboard"><div class="stack"><span class="eyebrow">Local working copy</span><h2>Resume the workbook</h2><p id="workbook-progress-summary">Loading local progress…</p><div class="dashboard-actions"><a id="workbook-resume" class="workbook-download" href="unit4/lesson-36.html">Start lesson 1</a><button id="export-workbook-unit" type="button">Export Unit 4 Markdown</button><button id="backup-workbook" type="button">Back up JSON</button><label class="import-label">Import JSON<input id="import-workbook" type="file" accept="application/json"></label></div></div><div class="editor-panel"><label>My Java editor <select data-editor-select></select></label><p>Choose once; each editor build shows the matching directions.</p><p><strong>The LMS is the system of record.</strong> This browser stores only a working copy.</p></div></div></section>
+<section id="unit4-lessons"><div class="wrap stack-lg"><div class="stack"><span class="eyebrow">Meeting by meeting</span><h2>Unit 4 lessons</h2><p>Twenty-two verified Java projects, paper-first FRQ cycles, protected checks, and two Picture Lab companion pages are grouped by arc below.</p></div><div id="unit4-lesson-grid" class="unit-lesson-grid"></div></div></section>
+<section><div class="wrap stack-lg"><div class="stack"><span class="eyebrow">Remixed from this folder</span><h2>Local labs become a coherent algorithm sequence</h2></div><div class="material-map">
+<div><strong>Student Average and NumberList</strong><span>array accumulators, traversal, shifting, and invariants</span></div>
+<div><strong>Chapter 7.5 file contexts</strong><span>Inventory, Weather, and Gradebook become portable verified Java labs</span></div>
+<div><strong>NumberJumble and Words</strong><span>ArrayList methods, replacement, removal, and index shifts</span></div>
+<div><strong>Grid and Game of Life work</strong><span>rectangular traversal and coordinate reasoning lead into image algorithms</span></div>
+<div><strong>Searching and Sorting labs</strong><span>large data contexts are reduced to transparent traces before scale</span></div>
+<div><strong>Older recursion exercises</strong><span>reframed as tracing because students are not asked to author recursion</span></div>
+</div></div></section>
+</main><footer><div class="wrap"><p>Unit 4 uses the shared workbook and presentation system. Java 17 projects are compiled and checked before publication; authorized Picture Lab files and secure assessments remain in the classroom system.</p></div></footer><div id="workbook-live" class="sr-only" aria-live="polite"></div>
+<script src="assets/content.js"></script><script src="assets/calendar.js"></script><script src="assets/role.js?v=20260729c"></script><script src="assets/classroom-links.js?v=20260729c"></script><script src="assets/unit4.js?v=20260729c"></script><script src="assets/workbook-present.js?v=20260730a"></script><script src="assets/workbook.js?v=20260730a"></script><script>renderWorkbookOverview("unit4-lesson-grid");</script>
+</body></html>

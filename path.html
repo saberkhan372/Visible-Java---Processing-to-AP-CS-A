@@ -1,0 +1,497 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Units — AP Computer Science A</title>
+<meta name="description" content="A unit-by-unit route through remixed AP CS A course materials for students coming from Processing.">
+<link rel="stylesheet" href="assets/site.css">
+</head>
+<body>
+
+<a class="skip-link" href="#main-content">Skip to content</a>
+
+<header class="masthead">
+  <div class="wrap">
+    <a class="logo" href="index.html">AP CS A <span class="arrow">&middot;</span> <span class="logo-sub">built on your sketches</span></a>
+    <nav aria-label="Primary navigation">
+      <a href="index.html">Start</a>
+      <a href="calendar.html">Calendar</a>
+      <a href="path.html" aria-current="page">Units</a>
+      <a href="examples.html">Compare</a>
+      <a href="translate.html">Translate</a>
+      <a href="port.html">Port</a>
+      <a href="traps.html">Traps</a>
+      <a href="frq.html">FRQ</a>
+      <a href="setup.html">Setup</a>
+      <a href="camp.html">Camp</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main-content" tabindex="-1">
+
+<section>
+  <div class="wrap stack">
+    <span class="eyebrow">Unit by unit</span>
+    <h1>The path</h1>
+    <p class="lede">
+      This course remixes the handouts, labs, assessments, and examples already in the
+      course folder into the current four-unit AP CS A sequence. This page is the broad
+      route through that material, written for someone who already knows how to write a loop.
+      <strong>Skim what you know. Slow down where it says to.</strong>
+    </p>
+    <p class="lede">
+      <strong>All four units now have workbook overviews and meeting-by-meeting lesson pages.</strong>
+      Every lesson centers AP Java; a Java + Processing extension is available when it helps
+      students transfer what they already know. Use the broad route here, then enter the
+      detailed workbook for the unit you are studying.
+    </p>
+    <div class="note">
+      <p>
+        <strong>The course spine is local:</strong> the lesson pages, remixed handouts, labs,
+        and current College Board topic sequence. Outside sites are optional practice, not
+        the curriculum students must follow.
+      </p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap stack-lg">
+    <div class="stack">
+      <span class="eyebrow">The shape of the year</span>
+      <h2>Where the time goes</h2>
+      <p>
+        E block meets on Gold days &mdash; <strong>71 times</strong> between Friday
+        4 September and Monday 10 May, about 89 hours. That is less than College Board
+        assumes, which is fine, because you are starting a year ahead on the basics. The
+        trade is deliberate: Units 1 and 2 move fast, Units 3 and 4 do not move fast at all.
+      </p>
+    </div>
+
+    <ol class="timeline">
+      <li class="tl-item">
+        <span class="tl-when">4 Sep &ndash; 6 Oct</span>
+        <span class="tl-rail"><span class="tl-dot"></span></span>
+        <div class="tl-body">
+          <h3>Unit 1 &middot; Using Objects and Methods</h3>
+          <div class="tl-meta"><span class="tl-blocks">11 meetings</span> <span>15&ndash;25% of the multiple choice</span></div>
+          <p>
+            The first two weeks are a speed-run through things you already know. Then it
+            slows right down for <strong>Strings</strong>, which get three full meetings
+            &mdash; a quarter of the unit, far more than their share &mdash; because you have
+            never used them and Question 1 needs them every year.
+          </p>
+        </div>
+      </li>
+
+      <li class="tl-item">
+        <span class="tl-when">8 Oct &ndash; 9 Nov</span>
+        <span class="tl-rail"><span class="tl-dot"></span></span>
+        <div class="tl-body">
+          <h3>Unit 2 &middot; Selection and Iteration</h3>
+          <div class="tl-meta"><span class="tl-blocks">11 meetings</span> <span>25&ndash;35% &mdash; the biggest MCQ slice</span></div>
+          <p>
+            The most familiar unit and the most heavily tested one. Almost nothing here is
+            new, so the work is <em>speed</em>: tracing loops accurately, under time. New
+            bits are De Morgan's laws, string algorithms, and counting loop executions.
+          </p>
+        </div>
+      </li>
+
+      <li class="tl-item">
+        <span class="tl-when">11 Nov &ndash; 8 Jan</span>
+        <span class="tl-rail"><span class="tl-dot"></span></span>
+        <div class="tl-body">
+          <h3>Unit 3 &middot; Class Creation</h3>
+          <div class="tl-meta"><span class="tl-blocks">13 meetings</span> <span>10&ndash;18% of MCQ &middot; 7 of 25 FRQ points</span></div>
+          <p>
+            Smallest unit by exam weight, and it still gets full time &mdash; because
+            Question 2 asks you to write a whole class, and last year you wrote classes
+            with no <code>private</code> anywhere and almost no methods that returned
+            anything. <code>static</code> is genuinely new.
+          </p>
+        </div>
+      </li>
+
+      <li class="tl-item">
+        <span class="tl-when">12 Jan &ndash; 22 Apr</span>
+        <span class="tl-rail"><span class="tl-dot"></span></span>
+        <div class="tl-body">
+          <h3>Unit 4 &middot; Data Collections</h3>
+          <div class="tl-meta"><span class="tl-blocks">30 meetings</span> <span>30&ndash;40% of MCQ &middot; 11 of 25 FRQ points</span></div>
+          <p>
+            Nearly half the year, because nearly half the exam. Arrays are review;
+            everything else is not. Text files and <code>ArrayList</code> are new, 2D arrays
+            are completely new, and searching, sorting and recursion arrive at the end.
+            Picture Lab lands here &mdash; the most Processing-like thing in the course.
+          </p>
+        </div>
+      </li>
+
+      <li class="tl-item is-review">
+        <span class="tl-when">26 Apr &ndash; 10 May</span>
+        <span class="tl-rail"><span class="tl-dot"></span></span>
+        <div class="tl-body">
+          <h3>Review</h3>
+          <div class="tl-meta"><span class="tl-blocks">6 meetings</span> <span>everything, under time</span></div>
+          <p>
+            A full timed multiple-choice section first, to find out what is actually weak.
+            Then all four free-response types under real time limits, the Java Quick
+            Reference end to end, and a Bluebook practice run.
+          </p>
+        </div>
+      </li>
+
+      <li class="tl-item is-exam">
+        <span class="tl-when">Wed 12 May 2027</span>
+        <span class="tl-rail"><span class="tl-dot"></span></span>
+        <div class="tl-body">
+          <h3>AP Exam &middot; 12:00 PM</h3>
+          <div class="tl-meta"><span class="tl-blocks">3 hours</span> <span>42 MCQ (55%) &middot; 4 FRQ (45%)</span></div>
+          <p>
+            Ninety minutes each side. Digital, in Bluebook, with the Java Quick Reference
+            available on screen &mdash; and no Run button.
+          </p>
+        </div>
+      </li>
+    </ol>
+
+    <div class="note">
+      <p>
+        <strong>One date to watch.</strong> Spring break runs <strong>18 March to 6
+        April</strong> &mdash; nineteen days, five weeks before the exam. 2D arrays finish
+        right before it and the exam-facing practice starts right after, so whatever is
+        shaky on 18 March will still be shaky on 6 April unless you touch it. Ten minutes of
+        <a href="traps.html">traps</a> a day over the break is enough.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ UNIT 1 ============ -->
+<section>
+  <div class="wrap stack">
+    <div class="unit-head" id="unit1">
+      <h2>Unit 1 &middot; Using Objects and Methods</h2>
+      <span class="weight">15&ndash;25%</span>
+      <a href="unit1.html" class="unit-link">Open the 11 lessons &rarr;</a>
+    </div>
+
+    <div class="step">
+      <div class="step-label">Skim</div>
+      <div class="step-body">
+        <p><a href="unit1/lesson-01.html">Lessons 1</a> and <a href="unit1/lesson-02.html">2</a> &mdash; program entry, output, variables, types, expressions, casting, and compound assignment.</p>
+        <p>You know almost all of this. Focus on two Java differences: AP code uses <code>double</code> rather than Processing's usual <code>float</code>, and integer division discards the fractional part.</p>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="step-label">Read</div>
+      <div class="step-body">
+        <p><a href="unit1.html#unit1-lessons">Lessons 3&ndash;9</a> &mdash; libraries, method signatures, the <code>Math</code> class, constructors, instance methods, aliasing, and <code>String</code>.</p>
+        <ul>
+          <li><strong>1.11 Math class</strong> &mdash; where <code>random()</code>, <code>abs()</code> and <code>sqrt()</code> went.</li>
+          <li><strong>1.15 Strings</strong> &mdash; <em>the biggest single gap in the whole course for you.</em> Across every sketch you wrote last year there is not one call to <code>substring</code>, <code>indexOf</code>, or <code>compareTo</code>. You drew strings; you never took them apart. Free-response Question 1 Part B requires these every single year.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="step-label">Slow down</div>
+      <div class="step-body">
+        <p><strong>References and aliasing.</strong> Nothing you did in Processing prepares you for this and it is worth more points than it looks.</p>
+        <ul>
+          <li>Traps <a href="traps.html">11 and 12</a> on this site, then step both through <a href="https://pythontutor.com/java.html">Java Tutor</a>.</li>
+          <li>Your teacher's <em>Tracing References</em> and <em>Changing People</em> labs. Hand-draw the diagram before you run anything.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="step-label">Drill</div>
+      <div class="step-body">
+        <ul>
+          <li><a href="https://codingbat.com/java/Warmup-1">CodingBat Warmup-1</a> &mdash; twenty minutes, gets you used to writing a method with a return type.</li>
+          <li><a href="https://codingbat.com/java/String-1">CodingBat String-1</a> &mdash; do all of them. This is where <code>substring</code> and <code>indexOf</code> become automatic.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="step-label">Check</div>
+      <div class="step-body">
+        <ul>
+          <li>Can you write a class header, a constructor, and a method that returns a value, from memory, with no autocomplete?</li>
+          <li>Given <code>String s = "computer"</code>, can you say what <code>s.substring(2, 5)</code> is without counting on your fingers twice?</li>
+          <li>Can you explain why <code>a == b</code> can be <code>true</code> for two strings and still be the wrong thing to write?</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ UNIT 2 ============ -->
+<section>
+  <div class="wrap stack">
+    <div class="unit-head" id="unit2">
+      <h2>Unit 2 &middot; Selection and Iteration</h2>
+      <span class="weight">25&ndash;35%</span>
+      <a href="unit2.html" class="unit-link">Open the workbook &rarr;</a>
+    </div>
+
+    <div class="step">
+      <div class="step-label">Skim</div>
+      <div class="step-body">
+        <p>The remixed loop and selection materials cover booleans, <code>if</code>, nested <code>if</code>, compound conditions, <code>while</code>, <code>for</code>, and nested loops.</p>
+        <p>This is the largest slice of the exam and you already know all of it. Your job here is <em>speed and accuracy under time pressure</em>, not new concepts. Do not let the familiarity fool you into skipping the practice.</p>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="step-label">Read</div>
+      <div class="step-body">
+        <ul>
+          <li><strong>2.6 De Morgan's Laws</strong> &mdash; probably new. How to push a <code>!</code> through an <code>&amp;&amp;</code> or <code>||</code>, and why it flips.</li>
+          <li><strong>2.10 String algorithms</strong> &mdash; looping through a string one character at a time.</li>
+          <li><strong>2.12 Informal runtime analysis</strong> &mdash; counting how many times a loop body runs. New, and easy points.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="step-label">Slow down</div>
+      <div class="step-body">
+        <p><strong>Short-circuit evaluation</strong> (trap 8) and <strong>tracing nested loops</strong> (trap 9). Both appear almost every year and both are pure tracing, which is exactly the muscle you have not built.</p>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="step-label">Drill</div>
+      <div class="step-body">
+        <ul>
+          <li><a href="https://codingbat.com/java/Logic-1">CodingBat Logic-1</a> and <a href="https://codingbat.com/java/Logic-2">Logic-2</a> &mdash; the best boolean practice that exists.</li>
+          <li><a href="https://codingbat.com/java/String-2">CodingBat String-2</a> &mdash; loops over strings.</li>
+          <li>Your teacher's loop/if packet and Chapter 3 multiple-choice packet.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="step-label">Lab</div>
+      <div class="step-body">
+        <p><strong>Magpie Chatbot Lab</strong> from the course folder &mdash; a College Board lab built out of <code>if</code> statements and <code>indexOf</code>. It doubles as String practice.</p>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="step-label">Check</div>
+      <div class="step-body">
+        <ul>
+          <li>Given a nested loop with the inner bound depending on the outer variable, can you count the total iterations in under a minute?</li>
+          <li>Can you rewrite <code>!(a &amp;&amp; b)</code> without the outer <code>!</code>?</li>
+          <li>Do you know what <code>5 % 8</code> is, instantly?</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ UNIT 3 ============ -->
+<section>
+  <div class="wrap stack">
+    <div class="unit-head" id="unit3">
+      <h2>Unit 3 &middot; Class Creation</h2>
+      <span class="weight">10&ndash;18%</span>
+      <a href="unit3.html" class="unit-link">Open the 13 lessons &rarr;</a>
+    </div>
+
+    <div class="note">
+      <p>
+        <strong>Smallest unit, outsized payoff.</strong> One of your four free-response
+        questions is <em>always</em> "write this class." Ten percent of the multiple choice,
+        twenty-five percent of the writing.
+      </p>
+    </div>
+
+    <div class="step">
+      <div class="step-label">Read</div>
+      <div class="step-body">
+        <p>The remixed class-creation handouts and labs cover the full topic sequence.</p>
+        <ul>
+          <li><strong>3.3&ndash;3.5</strong> anatomy of a class, constructors, methods. You have done this in sketches; now do it with <code>public</code> and <code>private</code> in the right places.</li>
+          <li><strong>3.6</strong> passing and returning object references &mdash; the aliasing material again, from the writing side.</li>
+          <li><strong>3.7 static</strong> &mdash; genuinely new. The PDE never made you think about it.</li>
+          <li><strong>3.8&ndash;3.9</strong> scope, access, and <code>this</code>.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="step-label">Slow down</div>
+      <div class="step-body">
+        <p><strong>Encapsulation as a graded habit.</strong> Instance variables <code>private</code>, accessors <code>public</code>, constructor sets every field. In a sketch this was optional style. On a rubric it is points.</p>
+        <p>Trap 13 for what <code>static</code> actually means; trap 11 for what a method can and cannot change about the caller's object.</p>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="step-label">Practice</div>
+      <div class="step-body">
+        <ul>
+          <li>Mixed-up code and write-code practice from the imported course packets.</li>
+          <li>Your teacher's <em>Bank Account</em>, <em>Band Booster</em>, and <em>Tracking Grades</em> labs &mdash; all three are "write a class with fields, a constructor, and a few methods," which is the exact FRQ format.</li>
+          <li><strong>CupcakeMachine</strong> and <strong>StepTracker</strong> &mdash; released FRQ-style class-writing practice, worked and scored against the official criteria.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="step-label">Skip</div>
+      <div class="step-body">
+        <p>
+          Older <strong>inheritance</strong> folders are marked optional because
+          inheritance, <code>extends</code>, <code>super</code>, polymorphism and interfaces
+          were all removed from the exam in 2025. Same goes for any <em>Animal/Cow</em> or
+          <em>Dog/Labrador</em> style worksheet you come across. Interesting material,
+          zero exam value &mdash; leave it for after May.
+        </p>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="step-label">Check</div>
+      <div class="step-body">
+        <ul>
+          <li>Can you write a complete class &mdash; header, private fields, constructor, accessors, <code>toString</code> &mdash; on paper, correctly, in ten minutes?</li>
+          <li>Can you say why a <code>static</code> method cannot read an instance variable?</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ UNIT 4 ============ -->
+<section>
+  <div class="wrap stack">
+    <div class="unit-head" id="unit4">
+      <h2>Unit 4 &middot; Data Collections</h2>
+      <span class="weight">30&ndash;40%</span>
+      <a href="unit4.html" class="unit-link">Open the 30 lessons &rarr;</a>
+    </div>
+
+    <div class="note">
+      <p>
+        <strong>The big one.</strong> Well over a third of the exam, two of the four
+        free-response questions, and the largest amount of material that is new to you.
+        Budget accordingly &mdash; this unit is worth more than Units 1 and 3 combined.
+      </p>
+    </div>
+
+    <div class="step">
+      <div class="step-label">Read</div>
+      <div class="step-body">
+        <p>The remixed data-collections folder is organized in four passes:</p>
+        <ul>
+          <li><strong>Arrays (4.3&ndash;4.5)</strong> &mdash; <em>familiar.</em> You built whole worlds out of arrays of objects. Watch only the <code>.length</code> / <code>.length()</code> / <code>.size()</code> distinction and the enhanced <code>for</code> loop's limits.</li>
+          <li><strong>ArrayList (4.7&ndash;4.10)</strong> &mdash; <em>new for most of you.</em> Unless you reached for one in your final project, you have not met it. Wrapper classes, and removal shifting every later index left.</li>
+          <li><strong>2D arrays (4.11&ndash;4.13)</strong> &mdash; <em>completely new.</em> There is not a single <code>[][]</code> anywhere in last year's work. Row-major order, nested loops, <code>grid.length</code> vs <code>grid[0].length</code>.</li>
+          <li><strong>Searching, sorting, recursion (4.14&ndash;4.17)</strong> &mdash; new. Sequential and binary search; selection, insertion and merge sort.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="step-label">New in 2025</div>
+      <div class="step-body">
+        <p>
+          <strong>4.2 Data Sets</strong> and <strong>4.6 Using Text Files</strong>. Reading
+          a file with <code>Scanner</code>, pulling values out line by line, and reasoning
+          about which data you would need to answer a given question.
+        </p>
+        <p>
+          <strong>Completely new</strong> &mdash; every program you wrote last year made up
+          its own data or read the mouse. None of them opened a file. And new to the course
+          too, so most review books and websites have not caught up. Do not assume a
+          resource covers this just because it looks thorough. Your teacher's
+          <em>Inventory Auditor</em>, <em>Weather Data Analyzer</em> and
+          <em>Gradebook Validator</em> labs are built for exactly this.
+        </p>
+        <p>
+          One warning: the reference sheet you get on exam day lists
+          <code>hasNext()</code> but <em>not</em> <code>hasNextLine()</code> or
+          <code>hasNextInt()</code>. Those work fine in a real IDE and appear in some
+          practice labs &mdash; just don't build an exam answer on them.
+        </p>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="step-label">Recursion</div>
+      <div class="step-body">
+        <p>
+          <strong>Tracing only.</strong> Since 2025 you are never asked to <em>write</em> a
+          recursive method &mdash; only to read one and say what it returns, find its base
+          case, or spot why it never terminates.
+        </p>
+        <p>
+          This makes recursion much easier than the reputation suggests. Use trap 18 and
+          the folder's tracing examples. If your teacher assigns the older
+          <em>Power</em>, <em>Fibonacci</em> or <em>Palindrome</em> labs, do them as tracing
+          exercises: predict every return value before running anything.
+        </p>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="step-label">Drill</div>
+      <div class="step-body">
+        <ul>
+          <li><a href="https://codingbat.com/java/Array-1">CodingBat Array-1</a>, <a href="https://codingbat.com/java/Array-2">Array-2</a>, <a href="https://codingbat.com/java/Array-3">Array-3</a>.</li>
+          <li><a href="https://codingbat.com/java/AP-1">CodingBat AP-1</a> &mdash; built from real exam questions.</li>
+          <li>The imported multiple-choice packets, sorted by arrays, <code>ArrayList</code>, 2D arrays, and algorithms.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="step-label">Lab</div>
+      <div class="step-body">
+        <p>
+          <strong>Picture Lab</strong> from the course folder. Manipulating images
+          pixel by pixel with 2D arrays &mdash; mirroring, collage, edge detection. This is
+          the closest the AP course comes to what you did in Processing, and it is the best
+          possible way to make 2D arrays stick. If you only do one lab all year, do this one.
+        </p>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="step-label">Check</div>
+      <div class="step-body">
+        <ul>
+          <li>Can you traverse a 2D array by row and by column without looking up which index is which?</li>
+          <li>Can you explain why removing from an <code>ArrayList</code> inside a forward loop skips elements?</li>
+          <li>Given a recursive method and an input, can you produce the return value on paper?</li>
+          <li>Can you open a file with <code>Scanner</code> and read it line by line from memory?</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <p>
+      Topic numbers follow the current AP CS A Course and Exam Description. Labs named
+      without links come from the remixed course folder and will be attached to their
+      individual lesson pages as those units are built.
+    </p>
+  </div>
+</footer>
+<script src="assets/role.js?v=20260729c"></script>
+</body>
+</html>
