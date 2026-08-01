@@ -184,11 +184,20 @@
     const form = document.getElementById("camp-interest-form");
     const responseFrame = document.getElementById("camp-form-response");
     const status = document.getElementById("camp-form-status");
+    const error = document.getElementById("camp-form-error");
     const thanks = document.getElementById("camp-form-thanks");
     const another = document.getElementById("camp-form-another");
     if (!form || !responseFrame || !status || !thanks || !another) return;
 
+    const SEND_TIMEOUT = 12000;
     let submitted = false;
+    let timeoutId = 0;
+
+    function resetButton() {
+      const button = form.querySelector('button[type="submit"]');
+      button.disabled = false;
+      button.textContent = "Join the interest list";
+    }
 
     function validateChoiceGroup(group) {
       const choices = Array.from(group.querySelectorAll('input[type="checkbox"]'));
@@ -216,29 +225,43 @@
       }
 
       submitted = true;
+      if (error) error.hidden = true;
       const button = form.querySelector('button[type="submit"]');
       button.disabled = true;
       button.textContent = "Sending…";
       status.textContent = "Sending your response…";
+
+      // The response iframe is cross-origin, so a submission that never lands looks
+      // identical to one still in flight. Give up after SEND_TIMEOUT and point at the
+      // Google-hosted form rather than leaving the button stuck on "Sending…".
+      window.clearTimeout(timeoutId);
+      timeoutId = window.setTimeout(function () {
+        if (!submitted) return;
+        submitted = false;
+        status.textContent = "";
+        if (error) error.hidden = false;
+        resetButton();
+      }, SEND_TIMEOUT);
     });
 
     responseFrame.addEventListener("load", function () {
       if (!submitted) return;
       submitted = false;
+      window.clearTimeout(timeoutId);
       form.reset();
       form.hidden = true;
       thanks.hidden = false;
       thanks.focus();
       status.textContent = "";
-      const button = form.querySelector('button[type="submit"]');
-      button.disabled = false;
-      button.textContent = "Join the interest list";
+      if (error) error.hidden = true;
+      resetButton();
     });
 
     another.addEventListener("click", function () {
       thanks.hidden = true;
       form.hidden = false;
-      form.querySelector("input").focus();
+      const firstField = form.querySelector("input:not([type=hidden]), select, textarea");
+      if (firstField) firstField.focus();
     });
   }
 

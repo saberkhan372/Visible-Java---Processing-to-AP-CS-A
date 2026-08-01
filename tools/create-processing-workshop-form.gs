@@ -52,6 +52,9 @@ function createProcessingWorkshopInterestForm() {
     .setTitle('School or organization')
     .setHelpText('Optional');
 
+  // No 'Student' option: this form collects name and email, and the workshop is for
+  // educators. Keeping a student path here would mean collecting minors' contact
+  // details with no parental-consent route.
   form.addMultipleChoiceItem()
     .setTitle('What is your role?')
     .setChoiceValues([
@@ -59,7 +62,6 @@ function createProcessingWorkshopInterestForm() {
       'Computer science teacher',
       'Arts or creative coding educator',
       'Instructional coach or administrator',
-      'Student',
     ])
     .showOtherOption(true)
     .setRequired(true);
@@ -162,8 +164,14 @@ function createProcessingWorkshopInterestForm() {
     .setTitle('Do you have any access or participation needs we should consider?')
     .setHelpText('Optional');
 
+  // Framed as an acknowledgement rather than a question: a required question with only
+  // a 'yes' answer is not a real choice. The choice string must stay byte-identical to
+  // the value posted by site/workshop.html, or Google silently drops the answer.
   form.addMultipleChoiceItem()
-    .setTitle('May CC Fest email you about this workshop?')
+    .setTitle(
+      'CC Fest will email you about this workshop, and only about this workshop, ' +
+      'at the address above.'
+    )
     .setChoiceValues([
       'Yes, you may email me about this workshop.',
     ])
