@@ -751,6 +751,114 @@ footer a { color: var(--ink-3); }
   padding: 0.75rem 0.85rem; border-top: 1px solid var(--rule);
   color: var(--ink-3); font: 0.7rem/1.5 var(--mono);
 }
+.camp-poster-section {
+  background:
+    linear-gradient(180deg, var(--ground), color-mix(in srgb, var(--sketch-soft) 56%, var(--ground)));
+}
+.camp-poster-intro { max-width: 44rem; }
+.camp-poster {
+  container-type: inline-size;
+  position: relative; isolation: isolate; width: min(100%, 52rem); aspect-ratio: 17 / 22;
+  margin: 0 auto; overflow: hidden; border: 1px solid #26352f; border-radius: 5px;
+  background: #0d1713; color: #e8eee9;
+  box-shadow: 0 28px 70px color-mix(in srgb, var(--ink) 22%, transparent);
+}
+.camp-poster::after {
+  content: ""; position: absolute; z-index: 1; inset: 0; pointer-events: none;
+  background:
+    linear-gradient(180deg, rgba(13, 23, 19, 0.04) 0%, rgba(13, 23, 19, 0.13) 46%, rgba(13, 23, 19, 0.76) 100%),
+    repeating-linear-gradient(180deg, rgba(255,255,255,0.012) 0 1px, transparent 1px 4px);
+}
+.camp-poster canvas { position: absolute; z-index: 0; inset: 0; width: 100%; height: 100%; }
+.camp-poster-glow {
+  position: absolute; z-index: 0; width: 38cqw; height: 38cqw; border-radius: 50%;
+  filter: blur(6cqw); opacity: 0.16; pointer-events: none;
+}
+.camp-poster-glow-one { left: 18cqw; top: 25cqw; background: #61d4b2; }
+.camp-poster-glow-two { right: -9cqw; bottom: 15cqw; background: #6b4a8c; opacity: 0.12; }
+.camp-poster-topline,
+.camp-poster-title-block,
+.camp-poster-console,
+.camp-poster-facts,
+.camp-poster-cta { position: absolute; z-index: 2; }
+.camp-poster-topline {
+  left: 5.2cqw; right: 5.2cqw; top: 4.5cqw; display: flex; justify-content: space-between;
+  gap: 2cqw; padding-bottom: 1.6cqw; border-bottom: 1px solid rgba(232, 238, 233, 0.18);
+  color: #e8eee9; font: 700 clamp(0.46rem, 1.1cqw, 0.67rem)/1.3 var(--mono);
+  letter-spacing: 0.15em; text-transform: uppercase;
+}
+.camp-poster-topline span:last-child { color: #65d9b8; font-weight: 500; }
+.camp-poster-topline code { color: inherit; background: none; padding: 0; }
+.camp-poster-topline b { font: inherit; font-variant-numeric: tabular-nums; }
+.camp-poster-title-block { left: 5.2cqw; right: 27cqw; top: 12.4cqw; }
+.camp-poster-title-block > p:first-child {
+  margin: 0 0 1.1cqw; color: #aeb9b4;
+  font: clamp(0.9rem, 3cqw, 1.55rem)/1.2 var(--serif);
+}
+.camp-poster-title-block h3 {
+  max-width: 64cqw; margin: 0; color: #e8eee9;
+  font: 600 clamp(2.4rem, 10.4cqw, 5.45rem)/0.86 var(--serif); letter-spacing: -0.045em;
+}
+.camp-poster-title-block h3 em { display: block; color: #67d4b3; font-style: normal; }
+.camp-poster-deck {
+  max-width: 56cqw; margin: 3.3cqw 0 0; color: #bdc6c2;
+  font: clamp(0.66rem, 1.85cqw, 0.98rem)/1.48 var(--sans);
+}
+.camp-poster-console {
+  left: 5.2cqw; right: 5.2cqw; top: 61.5%; overflow: hidden;
+  border: 1px solid rgba(121, 151, 139, 0.28); background: rgba(18, 28, 25, 0.91);
+  box-shadow: 0 14px 34px rgba(0,0,0,0.25); backdrop-filter: blur(5px);
+}
+.camp-poster-console-bar {
+  display: flex; justify-content: space-between; align-items: center; gap: 1rem;
+  padding: 0.7cqw 1.5cqw; border-bottom: 1px solid rgba(121, 151, 139, 0.2);
+  background: rgba(31, 87, 70, 0.42); color: #8fdcc5;
+  font: 600 clamp(0.43rem, 1.05cqw, 0.64rem)/1.2 var(--mono); letter-spacing: 0.13em; text-transform: uppercase;
+}
+.camp-poster-console-bar i {
+  display: inline-block; width: 0.72cqw; min-width: 4px; aspect-ratio: 1; margin-right: 0.6cqw;
+  border-radius: 50%; background: #65d9b8; box-shadow: 0 0 10px rgba(101, 217, 184, 0.6);
+}
+.camp-poster-console-bar span:last-child { color: #71827b; }
+.camp-poster-console-lines { padding: 1.35cqw 1.7cqw 1.5cqw; }
+.camp-poster-console-line {
+  display: flex; gap: 2.2cqw; min-height: 2.35cqw; margin: 0;
+  color: #a9b5b0; opacity: 0; transform: translateY(0.55cqw);
+  font: clamp(0.45rem, 1.45cqw, 0.75rem)/1.5 var(--mono); white-space: nowrap;
+  transition: opacity 240ms ease, transform 240ms ease;
+}
+.camp-poster-console-line.is-visible { opacity: 1; transform: translateY(0); }
+.camp-poster-console-line b { min-width: 15cqw; color: #c8d0cc; font: inherit; }
+.camp-poster-console-line > i {
+  display: inline-block; width: 0.8cqw; min-width: 3px; height: 1.45cqw; min-height: 6px;
+  align-self: center; background: #dce5e0; animation: camp-poster-caret 0.85s steps(1) infinite;
+}
+.camp-poster-facts {
+  left: 5.2cqw; right: 5.2cqw; top: 80.5%; display: grid; grid-template-columns: repeat(4, 1fr);
+  margin: 0; border-top: 1px solid rgba(232, 238, 233, 0.18); border-bottom: 1px solid rgba(232, 238, 233, 0.18);
+}
+.camp-poster-facts div { min-width: 0; padding: 1.5cqw 1.4cqw 1.6cqw 0; }
+.camp-poster-facts div + div { padding-left: 1.4cqw; border-left: 1px solid rgba(232, 238, 233, 0.15); }
+.camp-poster-facts dt {
+  color: #7c8b85; font: 600 clamp(0.4rem, 0.95cqw, 0.58rem)/1.2 var(--mono);
+  letter-spacing: 0.13em; text-transform: uppercase;
+}
+.camp-poster-facts dd {
+  margin: 0.7cqw 0 0; color: #e8eee9;
+  font: 500 clamp(0.62rem, 2.05cqw, 1.08rem)/1.16 var(--serif); white-space: nowrap;
+}
+.camp-poster-cta {
+  left: 5.2cqw; right: 5.2cqw; bottom: 4.5cqw; display: flex; align-items: center;
+  justify-content: space-between; min-height: 5.7cqw; padding: 1.15cqw 1.6cqw;
+  border: 1px solid #65d9b8; border-radius: 2px; background: #65d9b8; color: #0d1713;
+  font: 700 clamp(0.54rem, 1.35cqw, 0.78rem)/1 var(--mono); letter-spacing: 0.05em;
+  text-decoration: none; text-transform: uppercase;
+}
+.camp-poster-cta:hover { background: #e1b259; border-color: #e1b259; color: #0d1713; }
+.camp-poster-cta span { font-size: 1.4em; }
+@keyframes camp-poster-caret { 50% { opacity: 0; } }
+.camp-poster.is-reduced .camp-poster-console-line { opacity: 1; transform: none; }
+.camp-poster.is-reduced .camp-poster-console-line > i { animation: none; }
 .camp-intro-grid {
   display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(280px, 0.85fr);
   gap: clamp(2rem, 7vw, 5rem); align-items: start;
@@ -870,6 +978,11 @@ footer a { color: var(--ink-3); }
 @media (max-width: 640px) {
   .camp-hero-grid { gap: 2.2rem; }
   .camp-sketch-card canvas { height: 300px; }
+  .camp-poster { border-radius: 3px; }
+  .camp-poster-title-block { right: 11cqw; }
+  .camp-poster-deck { max-width: 72cqw; }
+  .camp-poster-console-line { gap: 1.5cqw; }
+  .camp-poster-console-line b { min-width: 21cqw; }
   .camp-outcomes, .camp-projects, .camp-logistics, .camp-form-section { grid-template-columns: 1fr; }
   .camp-logistics > div, .camp-logistics > div:not(:nth-child(3n + 1)) { padding-inline: 0; border-left: 0; }
   .camp-field.wide, .camp-choice-group.wide, .camp-consent.wide, .camp-form-actions.wide { grid-column: 1; }
