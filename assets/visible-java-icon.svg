@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-labelledby="title desc">
+  <title id="title">Visible Java icon</title>
+  <desc id="desc">A visible object held between colorful Java braces.</desc>
+
+  <rect width="512" height="512" rx="108" fill="#16211F"/>
+
+  <!-- Processing / sketch side -->
+  <path
+    d="M206 82
+       C164 82 151 103 151 145
+       L151 190
+       C151 226 137 245 105 256
+       C137 267 151 286 151 322
+       L151 367
+       C151 409 164 430 206 430"
+    fill="none"
+    stroke="#5FCFAF"
+    stroke-width="38"
+    stroke-linecap="round"
+    stroke-linejoin="round"/>
+
+  <!-- Standard Java / console side -->
+  <path
+    d="M306 82
+       C348 82 361 103 361 145
+       L361 190
+       C361 226 375 245 407 256
+       C375 267 361 286 361 322
+       L361 367
+       C361 409 348 430 306 430"
+    fill="none"
+    stroke="#6FBEE2"
+    stroke-width="38"
+    stroke-linecap="round"
+    stroke-linejoin="round"/>
+
+  <!-- The object made visible -->
+  <circle cx="256" cy="256" r="78" fill="#FAFBFA"/>
+  <circle cx="256" cy="256" r="31" fill="#B497D6"/>
+  <circle cx="244" cy="244" r="9" fill="#FAFBFA" opacity="0.72"/>
+</svg>
