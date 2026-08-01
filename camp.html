@@ -3,21 +3,500 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Moved — Processing for AP Computer Science A</title>
-<meta name="robots" content="noindex">
-<link rel="canonical" href="workshop.html">
-<meta http-equiv="refresh" content="0; url=workshop.html">
-<link rel="stylesheet" href="assets/site.css?v=20260801b">
+<title>CC Fest Camp — Processing for AP Computer Science A</title>
+<meta name="description" content="A proposed free CC Fest Camp for educators who want to teach AP Computer Science A through animation, interaction, visual models, and student-made projects.">
+<link rel="stylesheet" href="assets/site.css?v=20260801c">
 </head>
 <body>
+
+<a class="skip-link" href="#main-content">Skip to content</a>
+
+<header class="masthead">
+  <div class="wrap">
+    <a class="logo" href="index.html">AP CS A <span class="arrow">&middot;</span> <span class="logo-sub">built on your sketches</span></a>
+    <nav aria-label="Primary navigation">
+      <a href="index.html">Start</a>
+      <a href="calendar.html">Calendar</a>
+      <a href="path.html">Units</a>
+      <a href="examples.html">Compare</a>
+      <a href="translate.html">Translate</a>
+      <a href="port.html">Port</a>
+      <a href="traps.html">Traps</a>
+      <a href="frq.html">FRQ</a>
+      <a href="setup.html">Setup</a>
+      <a href="camp.html" aria-current="page">Camp</a>
+    </nav>
+  </div>
+</header>
+
 <main id="main-content" tabindex="-1">
-  <section>
-    <div class="wrap stack">
-      <h1>This page moved</h1>
-      <p class="lede">The educator camp page is now the <a href="workshop.html">workshop page</a>.</p>
+
+<section class="camp-hero">
+  <div class="wrap camp-hero-grid">
+    <div class="stack-lg camp-hero-copy">
+      <div class="stack">
+        <span class="eyebrow">CC Fest Camp &middot; proposed</span>
+        <h1>Processing for AP CS A.<br><em>Make Java visible.</em></h1>
+        <p class="lede">
+          A free, hands-on CC Fest Camp for educators who want to teach AP Computer Science A
+          through animation, interaction, visual models, and student-made projects.
+        </p>
+      </div>
+      <div class="camp-actions">
+        <a class="camp-button primary" href="#interest">Join the interest list</a>
+        <a class="camp-button secondary" href="#sessions">See the session arc</a>
+      </div>
+      <div class="camp-facts" aria-label="Proposed camp details">
+        <span>Free</span>
+        <span>Online</span>
+        <span>Four sessions</span>
+        <span>Optional studio</span>
+      </div>
     </div>
-  </section>
+
+    <figure class="camp-sketch-card">
+      <div class="camp-sketch-bar">
+        <span><i></i> Object world</span>
+        <span>move your pointer</span>
+      </div>
+      <canvas id="camp-sketch" role="img" aria-label="Animated visual model of Java objects moving through a grid and responding to one another"></canvas>
+      <figcaption>
+        State becomes motion. A method becomes behavior. A collection becomes a world.
+      </figcaption>
+    </figure>
+  </div>
+</section>
+
+<section>
+  <div class="wrap camp-intro-grid">
+    <div class="stack">
+      <span class="eyebrow">The camp concept</span>
+      <h2>Creative coding as an AP teaching surface</h2>
+      <p class="camp-timeline-note">
+        CC Fest is a volunteer-run creative coding education community.
+        <a href="https://ccfest.rocks" target="_blank" rel="noopener">Learn more about CC Fest</a>.
+      </p>
+      <p>
+        Processing gives abstract Java ideas somewhere to live. A field controls a position.
+        A Boolean changes a scene. A loop draws a pattern. An array of objects becomes a
+        simulation students can see, test, and explain.
+      </p>
+      <p>
+        The goal is not to replace AP-style reasoning with graphics. It is to build a visible
+        model first, then carry the same variables, methods, classes, and algorithms into
+        standard Java and written AP tasks.
+      </p>
+    </div>
+    <aside class="note camp-who">
+      <h3>Who this is for</h3>
+      <ul class="plain">
+        <li>Current and future AP Computer Science A teachers</li>
+        <li>Introductory Java teachers looking for a creative project layer</li>
+        <li>Creative coding educators moving from p5.js toward Java</li>
+        <li>Instructional coaches supporting project-based computer science</li>
+      </ul>
+      <p><strong>No prior Processing experience is required.</strong></p>
+    </aside>
+  </div>
+</section>
+
+<section id="sessions">
+  <div class="wrap stack-lg">
+    <div class="stack">
+      <span class="eyebrow">Proposed session arc</span>
+      <h2>Four sessions, then an optional classroom studio</h2>
+      <p>
+        Each session moves from a visible experiment to an AP transfer task. Participants
+        predict, run, revise, trace, and leave with something they can adapt.
+      </p>
+    </div>
+
+    <ol class="camp-arc">
+      <li class="camp-session">
+        <span class="camp-session-number">01</span>
+        <div class="stack-sm">
+          <span class="eyebrow">Sketch structure</span>
+          <h3>From sketch to Java</h3>
+          <p><code>setup()</code>, <code>draw()</code>, variables, methods, scope, and what Processing supplies behind the scenes.</p>
+        </div>
+        <code class="camp-session-code">draw() &rarr; repeated call</code>
+      </li>
+      <li class="camp-session">
+        <span class="camp-session-number">02</span>
+        <div class="stack-sm">
+          <span class="eyebrow">Control flow</span>
+          <h3>Logic you can see</h3>
+          <p>Conditionals, loops, state, input, debugging, and animations that can be paused and traced.</p>
+        </div>
+        <code class="camp-session-code">if (state) &rarr; scene</code>
+      </li>
+      <li class="camp-session">
+        <span class="camp-session-number">03</span>
+        <div class="stack-sm">
+          <span class="eyebrow">Object design</span>
+          <h3>Objects become worlds</h3>
+          <p>Classes, constructors, arrays, <code>ArrayList</code>, and collections of visual objects with distinct state and behavior.</p>
+        </div>
+        <code class="camp-session-code">class &rarr; many instances</code>
+      </li>
+      <li class="camp-session">
+        <span class="camp-session-number">04</span>
+        <div class="stack-sm">
+          <span class="eyebrow">AP transfer</span>
+          <h3>From creative project to AP task</h3>
+          <p>Translate Processing work into standard Java, AP-style methods, systematic tests, tracing, and written reasoning.</p>
+        </div>
+        <code class="camp-session-code">sketch &rarr; exam Java</code>
+      </li>
+      <li class="camp-session studio">
+        <span class="camp-session-number">+</span>
+        <div class="stack-sm">
+          <span class="eyebrow">Optional studio</span>
+          <h3>Adapt, teach, and share</h3>
+          <p>Participants adapt one project for their own classroom, test the AP connection, and share unfinished or finished work.</p>
+        </div>
+        <code class="camp-session-code">remix &rarr; classroom</code>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<section>
+  <div class="wrap stack-lg">
+    <div class="stack">
+      <span class="eyebrow">What participants leave with</span>
+      <h2>Materials you can actually teach from</h2>
+      <p class="camp-outcome-lede">
+        Leave with runnable Processing sketches, AP-aligned translation activities,
+        adaptable project prompts, and a clearer way to connect creative work to standard
+        Java reasoning.
+      </p>
+    </div>
+    <div class="camp-outcomes">
+      <article>
+        <span class="camp-glyph">{ }</span>
+        <h3>Runnable sketches</h3>
+        <p>Small, legible examples built to reveal one Java idea at a time.</p>
+      </article>
+      <article>
+        <span class="camp-glyph">&harr;</span>
+        <h3>Translation activities</h3>
+        <p>Side-by-side moves from Processing syntax and lifecycle to AP Java.</p>
+      </article>
+      <article>
+        <span class="camp-glyph">&#9638;</span>
+        <h3>Project prompts</h3>
+        <p>Adaptable visual labs with checkpoints, testing moves, and reflection.</p>
+      </article>
+      <article>
+        <span class="camp-glyph">&#10003;</span>
+        <h3>AP transfer tasks</h3>
+        <p>Tracing, method writing, class design, collections, and written reasoning.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap stack-lg">
+    <div class="stack">
+      <span class="eyebrow">Sample classroom directions</span>
+      <h2>The camp starts from work that already exists</h2>
+      <p>
+        This site already demonstrates the move at the center of the camp: begin with a recognizable
+        sketch, expose the Java underneath it, and finish with a task that stands on its own.
+      </p>
+    </div>
+    <div class="camp-projects">
+      <a href="examples.html">
+        <span class="eyebrow">Compare</span>
+        <h3>One program, three environments</h3>
+        <p>See a visual sketch, Java using the Processing library, and exam-style Java side by side.</p>
+        <strong>Open examples &rarr;</strong>
+      </a>
+      <a href="port.html">
+        <span class="eyebrow">Port</span>
+        <h3>Turn a finished sketch into AP Java</h3>
+        <p>Move state and behavior into classes, preserve the algorithm, and remove the graphics dependency.</p>
+        <strong>Open the port lab &rarr;</strong>
+      </a>
+      <a href="translate.html">
+        <span class="eyebrow">Translate</span>
+        <h3>Name the API boundary</h3>
+        <p>Separate Processing conveniences from standard Java and the AP Quick Reference.</p>
+        <strong>Open the guide &rarr;</strong>
+      </a>
+      <a href="path.html">
+        <span class="eyebrow">Course path</span>
+        <h3>Keep Processing present all year</h3>
+        <p>Use visual continuity without letting the graphics library replace required AP reasoning.</p>
+        <strong>See the course path &rarr;</strong>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap stack-lg">
+    <div class="stack">
+      <span class="eyebrow">Proposed logistics</span>
+      <h2>A free online pilot shaped by the cohort</h2>
+    </div>
+    <dl class="camp-logistics">
+      <div><dt>Format</dt><dd>Four live online sessions plus an optional studio and share.</dd></div>
+      <div><dt>Length</dt><dd>Approximately 90–120 minutes per core session.</dd></div>
+      <div><dt>Cost</dt><dd>Free through CC Fest.</dd></div>
+      <div><dt>Prerequisites</dt><dd>Comfort with basic Java is useful. Processing experience is not required.</dd></div>
+      <div><dt>Technology</dt><dd>A laptop or desktop capable of running Processing and a standard Java environment.</dd></div>
+      <div><dt>Timing</dt><dd>Dates and meeting times will be chosen after reviewing interest-form time zones and availability.</dd></div>
+    </dl>
+  </div>
+</section>
+
+<section>
+  <div class="wrap stack-lg">
+    <div class="stack">
+      <span class="eyebrow">Questions</span>
+      <h2>Before you join the interest list</h2>
+    </div>
+    <div class="camp-faq">
+      <details>
+        <summary>Is Processing the same as p5.js?</summary>
+        <p>No. They share a creative coding philosophy and similar drawing ideas, but this camp uses Processing's Java mode. That matters because AP Computer Science A is a Java course. p5.js uses JavaScript.</p>
+      </details>
+      <details>
+        <summary>How does this align with AP Computer Science A?</summary>
+        <p>Every visual task is paired with a standard-Java transfer: method writing, control flow, class design, arrays, <code>ArrayList</code>, 2D structures, testing, or tracing. Processing is the visible context, not the exam language substitute.</p>
+      </details>
+      <details>
+        <summary>Do I need to know Processing already?</summary>
+        <p>No. The first session begins with sketch structure and the small set of Processing calls needed for the camp. Existing Java knowledge is the more useful starting point.</p>
+      </details>
+      <details>
+        <summary>Is this an official College Board workshop?</summary>
+        <p>No. This is an independent CC Fest Camp informed by the current AP Computer Science A course framework.</p>
+      </details>
+      <details>
+        <summary>Are the dates final?</summary>
+        <p>Not yet. The interest form is being used to choose dates, times, and the right balance of live and asynchronous participation.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<section id="interest" class="camp-interest-section">
+  <div class="wrap camp-interest-grid">
+    <div class="stack-lg camp-interest-copy">
+      <div class="stack">
+        <span class="eyebrow">Interest form</span>
+        <h2>Help shape the first cohort</h2>
+        <p>
+          Tell us what you teach, what you want to make visible, and when you could
+          participate. This takes about three minutes and does not commit you to attend.
+        </p>
+      </div>
+      <div class="note">
+        <p><strong>This is an interest form, not registration.</strong> CC Fest will use your response only to plan and contact you about this camp.</p>
+        <p>The camp is for educators, so the form asks for teacher contact details. Students
+        interested in this material should start with the <a href="index.html">course site</a> itself.</p>
+      </div>
+    </div>
+
+    <div class="camp-form-shell">
+      <!--
+        Posts directly to the published Google Form, whose questions are generated by
+        tools/create-processing-workshop-form.gs. Two things break this silently:
+
+        1. Changing a question in the Forms editor changes nothing here, but renaming or
+           replacing a question mints a new entry.NNNN id and this form's value is dropped.
+        2. pageHistory="0" assumes the Google Form is a single page. Adding a section
+           *break* in the Forms editor (not a section header) makes every submission fail.
+
+        Google returns HTTP 200 either way and the response is cross-origin, so neither
+        failure is visible from JavaScript. After any edit to the Form, submit this page
+        once for real and confirm the row lands in the response sheet.
+      -->
+      <form
+        id="camp-interest-form"
+        class="camp-form"
+        action="https://docs.google.com/forms/d/e/1FAIpQLSejHAD2X6rUvnoSzIv8aSlFvJc0BZT46u7sIsKbSqt2xQBo_Q/formResponse"
+        method="post"
+        target="camp-form-response"
+      >
+        <input type="hidden" name="fvv" value="1">
+        <input type="hidden" name="pageHistory" value="0">
+        <input type="hidden" name="submissionTimestamp" value="-1">
+
+        <div class="camp-form-section">
+          <div class="camp-form-heading"><span>01</span><h3>About you</h3></div>
+
+          <label class="camp-field">
+            <span>Name <strong>*</strong></span>
+            <input type="text" name="entry.98520291" autocomplete="name" required>
+          </label>
+
+          <label class="camp-field">
+            <span>Email address <strong>*</strong></span>
+            <input type="email" name="entry.1331508898" autocomplete="email" required>
+          </label>
+
+          <label class="camp-field">
+            <span>School or organization <small>optional</small></span>
+            <input type="text" name="entry.1896960997" autocomplete="organization">
+          </label>
+
+          <label class="camp-field">
+            <span>Your role <strong>*</strong></span>
+            <select name="entry.12613683" required>
+              <option value="">Select one</option>
+              <option>AP Computer Science A teacher</option>
+              <option>Computer science teacher</option>
+              <option>Arts or creative coding educator</option>
+              <option>Instructional coach or administrator</option>
+            </select>
+          </label>
+
+          <label class="camp-field wide">
+            <span>What courses do you teach?</span>
+            <textarea name="entry.176732879" rows="3" placeholder="For example: AP CS A, Intro to Java, or Creative Coding"></textarea>
+          </label>
+
+          <label class="camp-field wide">
+            <span>Time zone <strong>*</strong></span>
+            <select name="entry.1671799814" required>
+              <option value="">Select one</option>
+              <option>Hawaii</option><option>Alaska</option><option>Pacific</option>
+              <option>Mountain</option><option>Central</option><option>Eastern</option>
+              <option>Atlantic</option><option>UTC / GMT</option><option>Europe / Africa</option>
+              <option>Asia</option><option>Australia / New Zealand</option><option>Other</option>
+            </select>
+          </label>
+        </div>
+
+        <div class="camp-form-section">
+          <div class="camp-form-heading"><span>02</span><h3>Your experience</h3></div>
+
+          <label class="camp-field">
+            <span>AP CS A teaching experience <strong>*</strong></span>
+            <select name="entry.13668096" required>
+              <option value="">Select one</option>
+              <option>Planning to teach it</option><option>First year</option>
+              <option>2–4 years</option><option>5 or more years</option>
+              <option>I do not teach AP CS A</option>
+            </select>
+          </label>
+
+          <label class="camp-field">
+            <span>Processing experience <strong>*</strong></span>
+            <select name="entry.1136079482" required>
+              <option value="">Select one</option>
+              <option>New to Processing</option><option>I have tried a few sketches</option>
+              <option>I use it occasionally</option><option>I use it regularly in teaching</option>
+            </select>
+          </label>
+        </div>
+
+        <div class="camp-form-section">
+          <div class="camp-form-heading"><span>03</span><h3>Shape the camp</h3></div>
+
+          <fieldset class="camp-choice-group wide" data-required>
+            <legend>What would you most like help with? <strong>*</strong></legend>
+            <label><input type="checkbox" name="entry.1642782537" value="Making AP Java concepts visual"> <span>Making AP Java concepts visual</span></label>
+            <label><input type="checkbox" name="entry.1642782537" value="Creative projects and labs"> <span>Creative projects and labs</span></label>
+            <label><input type="checkbox" name="entry.1642782537" value="Objects and classes"> <span>Objects and classes</span></label>
+            <label><input type="checkbox" name="entry.1642782537" value="Loops and conditionals"> <span>Loops and conditionals</span></label>
+            <label><input type="checkbox" name="entry.1642782537" value="Arrays, ArrayList, and 2D arrays"> <span>Arrays, ArrayList, and 2D arrays</span></label>
+            <label><input type="checkbox" name="entry.1642782537" value="Translating Processing code into standard AP Java"> <span>Translating Processing into standard AP Java</span></label>
+            <label><input type="checkbox" name="entry.1642782537" value="Assessment, tracing, and AP-style questions"> <span>Assessment, tracing, and AP-style questions</span></label>
+          </fieldset>
+
+          <fieldset class="camp-choice-group" data-required>
+            <legend>Camp formats that could work <strong>*</strong></legend>
+            <label><input type="checkbox" name="entry.539116390" value="Four weekly live sessions"> <span>Four weekly live sessions</span></label>
+            <label><input type="checkbox" name="entry.539116390" value="Two longer live sessions"> <span>Two longer live sessions</span></label>
+            <label><input type="checkbox" name="entry.539116390" value="One-day intensive"> <span>One-day intensive</span></label>
+            <label><input type="checkbox" name="entry.539116390" value="Asynchronous materials"> <span>Asynchronous materials</span></label>
+            <label><input type="checkbox" name="entry.539116390" value="A mix of live and asynchronous participation"> <span>Mix of live and asynchronous</span></label>
+          </fieldset>
+
+          <fieldset class="camp-choice-group" data-required>
+            <legend>General availability <strong>*</strong></legend>
+            <label><input type="checkbox" name="entry.1726976817" value="Weekday mornings"> <span>Weekday mornings</span></label>
+            <label><input type="checkbox" name="entry.1726976817" value="Weekday afternoons"> <span>Weekday afternoons</span></label>
+            <label><input type="checkbox" name="entry.1726976817" value="Weekday evenings"> <span>Weekday evenings</span></label>
+            <label><input type="checkbox" name="entry.1726976817" value="Saturday mornings"> <span>Saturday mornings</span></label>
+            <label><input type="checkbox" name="entry.1726976817" value="Saturday afternoons"> <span>Saturday afternoons</span></label>
+            <label><input type="checkbox" name="entry.1726976817" value="Sunday mornings"> <span>Sunday mornings</span></label>
+            <label><input type="checkbox" name="entry.1726976817" value="Sunday afternoons"> <span>Sunday afternoons</span></label>
+          </fieldset>
+
+          <label class="camp-field wide">
+            <span>What would make this camp valuable to you? <strong>*</strong></span>
+            <textarea name="entry.651036386" rows="4" required></textarea>
+          </label>
+
+          <label class="camp-field wide">
+            <span>Access or participation needs <small>optional</small></span>
+            <textarea name="entry.436518026" rows="3"></textarea>
+          </label>
+
+          <!--
+            The value below still says "workshop" on purpose. It has to match the choice
+            string stored in the live Google Form byte for byte; Google drops any answer
+            that does not. Renaming the program does not change it. Only edit this string
+            in lockstep with the Form itself.
+          -->
+          <label class="camp-consent wide">
+            <input type="checkbox" name="entry.1032515606" value="Yes, you may email me about this workshop." required>
+            <span>I understand CC Fest will email me about this camp, and only about this
+            camp, using the address above. This is an interest form, not registration. <strong>*</strong></span>
+          </label>
+        </div>
+
+        <div class="camp-form-actions wide">
+          <button class="camp-button primary" type="submit">Join the interest list</button>
+          <p id="camp-form-status" class="camp-form-status" role="status" aria-live="polite"></p>
+          <p id="camp-form-error" class="camp-form-error" role="alert" hidden>
+            That did not go through. Please
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLSejHAD2X6rUvnoSzIv8aSlFvJc0BZT46u7sIsKbSqt2xQBo_Q/viewform" target="_blank" rel="noopener">open the form directly</a>
+            and submit there.
+          </p>
+        </div>
+      </form>
+
+      <div id="camp-form-thanks" class="camp-form-thanks" hidden tabindex="-1">
+        <span class="camp-thanks-mark">&#10003;</span>
+        <h3>Thanks for helping shape the camp.</h3>
+        <p>Your interest response has been sent. CC Fest will share dates and registration information when the plan is ready.</p>
+        <button class="camp-button secondary" type="button" id="camp-form-another">Send another response</button>
+      </div>
+
+      <iframe name="camp-form-response" id="camp-form-response" title="Camp interest form response" hidden></iframe>
+      <p class="camp-form-fallback">
+        Prefer Google's form interface?
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSejHAD2X6rUvnoSzIv8aSlFvJc0BZT46u7sIsKbSqt2xQBo_Q/viewform" target="_blank" rel="noopener">Open the form in a new tab</a>.
+      </p>
+    </div>
+  </div>
+</section>
+
 </main>
-<script>window.location.replace("workshop.html");</script>
+
+<footer>
+  <div class="wrap stack-sm">
+    <p>Processing for AP CS A is a proposed independent CC Fest Camp. It is not an official College Board workshop or endorsed by the College Board.</p>
+    <p><button class="reveal-btn" type="button" id="theme">Switch theme</button></p>
+  </div>
+</footer>
+
+<script>
+  document.getElementById("theme").addEventListener("click", () => {
+    const root = document.documentElement;
+    const dark = getComputedStyle(root).getPropertyValue("--ground").trim() === "#111917";
+    root.setAttribute("data-theme", dark ? "light" : "dark");
+  });
+</script>
+<script src="assets/camp.js?v=20260801c"></script>
+<script src="assets/role.js?v=20260729c"></script>
 </body>
 </html>

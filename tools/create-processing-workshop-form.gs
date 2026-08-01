@@ -2,26 +2,26 @@
  * Run this function once.
  *
  * It creates:
- *   1. A published Google Form for the workshop interest list.
+ *   1. A published Google Form for the CC Fest Camp interest list.
  *   2. A linked Google Sheet for responses.
  *
  * After it runs, open the execution log to get the form, edit, and sheet URLs.
  * There is no web-app deployment and no spreadsheet ID to configure.
  */
 function createProcessingWorkshopInterestForm() {
-  const title = 'Processing for AP CS A — Workshop Interest Form';
+  const title = 'Processing for AP CS A — CC Fest Camp Interest Form';
 
   const form = FormApp.create(title, true)
     .setDescription(
-      'CC Fest is exploring a free, hands-on workshop for educators who want ' +
+      'CC Fest is exploring a free, hands-on camp for educators who want ' +
       'to use Processing to make AP Computer Science A more visual, creative, ' +
       'and project-driven.\n\n' +
-      'Complete this short interest form to help shape the workshop schedule ' +
+      'Complete this short interest form to help shape the camp schedule ' +
       'and curriculum. This is an interest form, not registration.'
     )
     .setConfirmationMessage(
       'Thanks for your interest in Processing for AP CS A. We will share dates ' +
-      'and registration information when the workshop plan is ready.'
+      'and registration information when the camp plan is ready.'
     )
     .setCollectEmail(false)
     .setLimitOneResponsePerUser(false)
@@ -32,7 +32,7 @@ function createProcessingWorkshopInterestForm() {
 
   form.addSectionHeaderItem()
     .setTitle('About you')
-    .setHelpText('Tell us enough to understand who the workshop should serve.');
+    .setHelpText('Tell us enough to understand who the camp should serve.');
 
   form.addTextItem()
     .setTitle('Name')
@@ -52,7 +52,7 @@ function createProcessingWorkshopInterestForm() {
     .setTitle('School or organization')
     .setHelpText('Optional');
 
-  // No 'Student' option: this form collects name and email, and the workshop is for
+  // No 'Student' option: this form collects name and email, and the camp is for
   // educators. Keeping a student path here would mean collecting minors' contact
   // details with no parental-consent route.
   form.addMultipleChoiceItem()
@@ -114,7 +114,7 @@ function createProcessingWorkshopInterestForm() {
     .setRequired(true);
 
   form.addSectionHeaderItem()
-    .setTitle('Shape the workshop')
+    .setTitle('Shape the camp')
     .setHelpText('Your answers will help determine the format and curriculum.');
 
   form.addCheckboxItem()
@@ -132,7 +132,7 @@ function createProcessingWorkshopInterestForm() {
     .setRequired(true);
 
   form.addCheckboxItem()
-    .setTitle('Which workshop formats could work for you?')
+    .setTitle('Which camp formats could work for you?')
     .setChoiceValues([
       'Four weekly live sessions',
       'Two longer live sessions',
@@ -157,7 +157,7 @@ function createProcessingWorkshopInterestForm() {
     .setRequired(true);
 
   form.addParagraphTextItem()
-    .setTitle('What would make this workshop valuable to you?')
+    .setTitle('What would make this camp valuable to you?')
     .setRequired(true);
 
   form.addParagraphTextItem()
@@ -166,10 +166,12 @@ function createProcessingWorkshopInterestForm() {
 
   // Framed as an acknowledgement rather than a question: a required question with only
   // a 'yes' answer is not a real choice. The choice string must stay byte-identical to
-  // the value posted by site/workshop.html, or Google silently drops the answer.
+  // the value posted by site/camp.html, or Google silently drops the answer -- which is
+  // why it still says "workshop" after the program was renamed to CC Fest Camp. Changing
+  // it here means re-running this script or editing the live Form and the page together.
   form.addMultipleChoiceItem()
     .setTitle(
-      'CC Fest will email you about this workshop, and only about this workshop, ' +
+      'CC Fest will email you about this camp, and only about this camp, ' +
       'at the address above.'
     )
     .setChoiceValues([

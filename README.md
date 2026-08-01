@@ -34,18 +34,22 @@ tissue is the Java/Processing comparison, translation layer, port exercise, and 
 | `traps.html` | **Original.** 18 predict-the-output problems. |
 | `frq.html` | The four FRQ types, triage of old released questions, how to read a prompt. |
 | `setup.html` | Leaving the PDE: IDEs, keeping graphics, week-one compiler errors. |
-| `workshop.html` | Processing for AP CS A educator-workshop concept, session arc, sample materials, FAQ, and Google Forms interest form. |
-| `camp.html` | Redirect stub only. The page was renamed from `camp.html` to `workshop.html`; this keeps any already-shared link working. |
-| `tools/create-processing-workshop-form.gs` | Run-once Google Apps Script that creates the workshop interest form and linked response spreadsheet. |
+| `camp.html` | CC Fest Camp concept, session arc, sample materials, FAQ, and Google Forms interest form. |
+| `tools/create-processing-workshop-form.gs` | Run-once Google Apps Script that creates the interest form and linked response spreadsheet. Named before the program was called CC Fest Camp. |
 
 ### Interest form
 
-`workshop.html` posts directly to the published Google Form created by
+`camp.html` posts directly to the published Google Form created by
 `tools/create-processing-workshop-form.gs`, using hard-coded `entry.NNNN` field ids. Google
 answers cross-origin with HTTP 200 whether or not the submission was accepted, so a stale
 field id produces a success message and no row in the sheet. After **any** edit to the Form,
 submit the live page once and confirm the row lands. Adding a section *break* in the Forms
 editor also breaks submission, because the page posts `pageHistory=0`.
+
+The email-consent checkbox posts the literal string `Yes, you may email me about this
+workshop.` even though the page now says "camp". That string is the choice value stored in
+the live Form and has to match byte for byte. Rename the program freely; leave that value
+alone unless the Form is edited at the same time.
 
 ## Running it
 
